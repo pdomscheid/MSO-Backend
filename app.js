@@ -20,7 +20,9 @@ function addEndpoint(name) {
 
 addEndpoint("storage");
 
-app.listen(3000, (err)=>{
+var port = process.env.PORT || 3000;
+console.log(`Starting server on port ${port}...`)
+app.listen(port, (err)=>{
     if (err) console.error(err);
     else console.log("Server running.");
 });
