@@ -4,6 +4,8 @@ const fs = require('fs');
 const path = require('path');
 const makeCrud = require('express-json-file-crud').makeCrud;
 
+app.use(express.static('public')); //Serve public files
+
 function addEndpoint(name) {
     const folder = path.join(process.cwd(), name);
 
