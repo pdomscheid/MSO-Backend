@@ -4,6 +4,15 @@ const fs = require('fs');
 const path = require('path');
 const makeCrud = require('express-json-file-crud').makeCrud;
 
+app.use(function(req, res, next) {
+    console.log(req.url);
+    var match = /\/d\/(\d+)/.exec(req.url);
+    if (match) {
+        req.url = `/display.html?${match[1]}`;
+    }
+    next();
+ });
+
 app.use(express.static('public')); //Serve public files
 
 function addEndpoint(name) {
