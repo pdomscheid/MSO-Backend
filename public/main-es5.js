@@ -71,7 +71,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<form [formGroup]=\"loginForm\" (ngSubmit)=\"onSubmit(loginForm.value)\" class=\"form-signin\" id=\"form\">\n  <img class=\"mb-4\" src=\"/docs/4.3/assets/brand/bootstrap-solid.svg\" alt=\"\" width=\"72\" height=\"72\">\n  <h1 class=\"h3 mb-3 font-weight-normal\">Staying Alive</h1>\n  <span>Bitte geben Sie die SA-ID ein:</span>\n  <div class=\"form-group\">\n    <input type=\"text\" class=\"form-control\" id=\"said\" placeholder=\"SA-ID\" formControlName=\"SAID\">\n  </div>\n  <button type=\"submit\" class=\"btn btn-lg btn-primary btn-block\" id=\"submit\">Abrufen</button>\n  <p class=\"mt-5 mb-3 text-muted\">MSO @ HS-MA WS 2019</p>\n</form>\n";
+    __webpack_exports__["default"] = "<form [formGroup]=\"loginForm\" (ngSubmit)=\"onSubmit(loginForm.value)\" class=\"form-signin\" id=\"form\">\n  <img class=\"mb-4\" src=\"/docs/4.3/assets/brand/bootstrap-solid.svg\" alt=\"\" width=\"72\" height=\"72\">\n  <h1 class=\"h3 mb-3 font-weight-normal\">Staying Alive</h1>\n  <span>Bitte geben Sie die SA-ID ein:</span>\n  <div class=\"form-group\">\n    <input type=\"text\" class=\"form-control\" id=\"said\" placeholder=\"SA-ID\" formControlName=\"SAID\">\n  </div>\n  <div *ngIf=\"!validSAID\" class=\"alert alert-danger\" role=\"alert\">\n    Ungültige SA-ID.\n  </div>\n  <button type=\"submit\" class=\"btn btn-lg btn-primary btn-block\" id=\"submit\">Abrufen</button>\n  <p class=\"mt-5 mb-3 text-muted\">MSO @ HS-MA WS 2019</p>\n</form>\n";
     /***/
   },
 
@@ -1070,20 +1070,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.loginForm = this.formBuilder.group({
           SAID: ''
         });
+        this.validSAID = true;
       }
 
       _createClass(LoginComponent, [{
         key: "onSubmit",
         value: function onSubmit(loginData) {
-          // Process checkout data here
-          this.loginService.getSAID(loginData.SAID);
-          var test = true;
+          var _this = this;
 
-          if (test) {
-            this.router.navigate(['/said/' + loginData.SAID]);
-          } else {// TODO Add SAID doesn't exist
-          }
+          this.loginService.getSAID(loginData.SAID).subscribe(function (said) {
+            _this.validSAID = true;
 
+            _this.router.navigate(['/said/' + loginData.SAID]);
+          }, function (error) {
+            _this.validSAID = false;
+          });
           this.loginForm.reset();
         }
       }]);
@@ -1163,7 +1164,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(LoginService, [{
         key: "getSAID",
         value: function getSAID(id) {
-          return true;
+          return this.http.get('https://mso-backend.herokuapp.com/storage/' + id);
         }
       }]);
 
@@ -1260,16 +1261,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(MedInfosComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this = this;
+          var _this2 = this;
 
           this.route.paramMap.subscribe(function (params) {
-            _this.said = params.get('id');
+            _this2.said = params.get('id');
           });
-          this.data = this.saidService.getData(this.said);
-
-          if (this.data) {
-            this.mzd = this.data.medizinischeInformationen;
-          }
+          this.saidService.getData(this.said).subscribe(function (data) {
+            _this2.data = data;
+            _this2.mzd = data.medizinischeInformationen;
+          }, function (error) {
+            console.log(error);
+          });
         }
       }]);
 
@@ -1470,16 +1472,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(PersoenlicheInfosComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this2 = this;
+          var _this3 = this;
 
           this.route.paramMap.subscribe(function (params) {
-            _this2.said = params.get('id');
+            _this3.said = params.get('id');
           });
-          this.data = this.saidService.getData(this.said);
-
-          if (this.data) {
-            this.perd = this.data.persoenlicheDaten;
-          }
+          this.saidService.getData(this.said).subscribe(function (data) {
+            _this3.data = data;
+            _this3.perd = data.persoenlicheDaten;
+          }, function (error) {
+            console.log(error);
+          });
         }
       }]);
 
@@ -1586,16 +1589,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(PrivateInfosComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this3 = this;
+          var _this4 = this;
 
           this.route.paramMap.subscribe(function (params) {
-            _this3.said = params.get('id');
+            _this4.said = params.get('id');
           });
-          this.data = this.saidService.getData(this.said);
-
-          if (this.data) {
-            this.prid = this.data.privateDaten;
-          }
+          this.saidService.getData(this.said).subscribe(function (data) {
+            _this4.data = data;
+            _this4.prid = data.privateDaten;
+          }, function (error) {
+            console.log(error);
+          });
         }
       }]);
 
@@ -1702,10 +1706,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(SAIDComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this4 = this;
+          var _this5 = this;
 
           this.route.paramMap.subscribe(function (params) {
-            _this4.said = params.get('id');
+            _this5.said = params.get('id');
           });
           console.log(this.router.url);
           this.data = this.saidService.getData(this.said);
@@ -1792,7 +1796,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(SaidService, [{
         key: "getData",
-        value: function getData(id) {// TODO Call Endpoint
+        value: function getData(id) {
+          return this.http.get('https://mso-backend.herokuapp.com/storage/' + id);
         }
       }]);
 

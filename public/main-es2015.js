@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<form [formGroup]=\"loginForm\" (ngSubmit)=\"onSubmit(loginForm.value)\" class=\"form-signin\" id=\"form\">\n  <img class=\"mb-4\" src=\"/docs/4.3/assets/brand/bootstrap-solid.svg\" alt=\"\" width=\"72\" height=\"72\">\n  <h1 class=\"h3 mb-3 font-weight-normal\">Staying Alive</h1>\n  <span>Bitte geben Sie die SA-ID ein:</span>\n  <div class=\"form-group\">\n    <input type=\"text\" class=\"form-control\" id=\"said\" placeholder=\"SA-ID\" formControlName=\"SAID\">\n  </div>\n  <button type=\"submit\" class=\"btn btn-lg btn-primary btn-block\" id=\"submit\">Abrufen</button>\n  <p class=\"mt-5 mb-3 text-muted\">MSO @ HS-MA WS 2019</p>\n</form>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<form [formGroup]=\"loginForm\" (ngSubmit)=\"onSubmit(loginForm.value)\" class=\"form-signin\" id=\"form\">\n  <img class=\"mb-4\" src=\"/docs/4.3/assets/brand/bootstrap-solid.svg\" alt=\"\" width=\"72\" height=\"72\">\n  <h1 class=\"h3 mb-3 font-weight-normal\">Staying Alive</h1>\n  <span>Bitte geben Sie die SA-ID ein:</span>\n  <div class=\"form-group\">\n    <input type=\"text\" class=\"form-control\" id=\"said\" placeholder=\"SA-ID\" formControlName=\"SAID\">\n  </div>\n  <div *ngIf=\"!validSAID\" class=\"alert alert-danger\" role=\"alert\">\n    Ungültige SA-ID.\n  </div>\n  <button type=\"submit\" class=\"btn btn-lg btn-primary btn-block\" id=\"submit\">Abrufen</button>\n  <p class=\"mt-5 mb-3 text-muted\">MSO @ HS-MA WS 2019</p>\n</form>\n");
 
 /***/ }),
 
@@ -541,17 +541,16 @@ let LoginComponent = class LoginComponent {
         this.loginForm = this.formBuilder.group({
             SAID: ''
         });
+        this.validSAID = true;
     }
     onSubmit(loginData) {
-        // Process checkout data here
-        this.loginService.getSAID(loginData.SAID);
-        const test = true;
-        if (test) {
+        this.loginService.getSAID(loginData.SAID)
+            .subscribe((said) => {
+            this.validSAID = true;
             this.router.navigate(['/said/' + loginData.SAID]);
-        }
-        else {
-            // TODO Add SAID doesn't exist
-        }
+        }, error => {
+            this.validSAID = false;
+        });
         this.loginForm.reset();
     }
 };
@@ -593,7 +592,7 @@ let LoginService = class LoginService {
         this.http = http;
     }
     getSAID(id) {
-        return true;
+        return this.http.get('https://mso-backend.herokuapp.com/storage/' + id);
     }
 };
 LoginService.ctorParameters = () => [
@@ -650,10 +649,13 @@ let MedInfosComponent = class MedInfosComponent {
         this.route.paramMap.subscribe(params => {
             this.said = params.get('id');
         });
-        this.data = this.saidService.getData(this.said);
-        if (this.data) {
-            this.mzd = this.data.medizinischeInformationen;
-        }
+        this.saidService.getData(this.said)
+            .subscribe((data) => {
+            this.data = data;
+            this.mzd = data.medizinischeInformationen;
+        }, error => {
+            console.log(error);
+        });
     }
 };
 MedInfosComponent.ctorParameters = () => [
@@ -768,10 +770,13 @@ let PersoenlicheInfosComponent = class PersoenlicheInfosComponent {
         this.route.paramMap.subscribe(params => {
             this.said = params.get('id');
         });
-        this.data = this.saidService.getData(this.said);
-        if (this.data) {
-            this.perd = this.data.persoenlicheDaten;
-        }
+        this.saidService.getData(this.said)
+            .subscribe((data) => {
+            this.data = data;
+            this.perd = data.persoenlicheDaten;
+        }, error => {
+            console.log(error);
+        });
     }
 };
 PersoenlicheInfosComponent.ctorParameters = () => [
@@ -832,10 +837,13 @@ let PrivateInfosComponent = class PrivateInfosComponent {
         this.route.paramMap.subscribe(params => {
             this.said = params.get('id');
         });
-        this.data = this.saidService.getData(this.said);
-        if (this.data) {
-            this.prid = this.data.privateDaten;
-        }
+        this.saidService.getData(this.said)
+            .subscribe((data) => {
+            this.data = data;
+            this.prid = data.privateDaten;
+        }, error => {
+            console.log(error);
+        });
     }
 };
 PrivateInfosComponent.ctorParameters = () => [
@@ -943,7 +951,7 @@ let SaidService = class SaidService {
         this.http = http;
     }
     getData(id) {
-        // TODO Call Endpoint
+        return this.http.get('https://mso-backend.herokuapp.com/storage/' + id);
     }
 };
 SaidService.ctorParameters = () => [
