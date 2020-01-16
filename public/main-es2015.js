@@ -592,7 +592,7 @@ let LoginService = class LoginService {
         this.http = http;
     }
     getSAID(id) {
-        return this.http.get('https://mso-backend.herokuapp.com/storage/' + id);
+        return this.http.get('http://mso-backend.herokuapp.com/storage/' + id);
     }
 };
 LoginService.ctorParameters = () => [
@@ -951,7 +951,7 @@ let SaidService = class SaidService {
         this.http = http;
     }
     getData(id) {
-        return this.http.get('https://mso-backend.herokuapp.com/storage/' + id);
+        return this.http.get('http://mso-backend.herokuapp.com/storage/' + id);
     }
 };
 SaidService.ctorParameters = () => [

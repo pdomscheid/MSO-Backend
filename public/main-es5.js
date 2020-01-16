@@ -1164,7 +1164,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(LoginService, [{
         key: "getSAID",
         value: function getSAID(id) {
-          return this.http.get('https://mso-backend.herokuapp.com/storage/' + id);
+          return this.http.get('http://mso-backend.herokuapp.com/storage/' + id);
         }
       }]);
 
@@ -1797,7 +1797,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(SaidService, [{
         key: "getData",
         value: function getData(id) {
-          return this.http.get('https://mso-backend.herokuapp.com/storage/' + id);
+          return this.http.get('http://mso-backend.herokuapp.com/storage/' + id);
         }
       }]);
 
