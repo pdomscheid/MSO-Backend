@@ -1711,14 +1711,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.route.paramMap.subscribe(function (params) {
             _this5.said = params.get('id');
           });
-          console.log(this.router.url);
-          this.data = this.saidService.getData(this.said);
-
-          if (this.data) {
-            this.mzd = this.data.medizinischeInformationen;
-            this.prid = this.data.privateDaten;
-            this.perd = this.data.persoenlicheDaten;
-          }
+          this.saidService.getData(this.said).subscribe(function (data) {
+            _this5.data = data;
+            _this5.mzd = _this5.data.medizinischeInformationen;
+            _this5.prid = _this5.data.privateDaten;
+            _this5.perd = _this5.data.persoenlicheDaten;
+          }, function (error) {
+            console.log(error);
+          });
         }
       }]);
 

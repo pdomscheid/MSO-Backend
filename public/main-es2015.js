@@ -904,13 +904,15 @@ let SAIDComponent = class SAIDComponent {
         this.route.paramMap.subscribe(params => {
             this.said = params.get('id');
         });
-        console.log(this.router.url);
-        this.data = this.saidService.getData(this.said);
-        if (this.data) {
+        this.saidService.getData(this.said)
+            .subscribe((data) => {
+            this.data = data;
             this.mzd = this.data.medizinischeInformationen;
             this.prid = this.data.privateDaten;
             this.perd = this.data.persoenlicheDaten;
-        }
+        }, error => {
+            console.log(error);
+        });
     }
 };
 SAIDComponent.ctorParameters = () => [
