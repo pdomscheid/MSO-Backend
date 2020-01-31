@@ -6,7 +6,7 @@ const makeCrud = require('express-json-file-crud').makeCrud;
 
 app.use(function(req, res, next) {
     console.log(req.url);
-    var match = /\/d\/(\d+)/.exec(req.url);
+    var match = /\/said\/\d+/.exec(req.url);
     if (match) {
         req.url = `/display.html?${match[1]}`;
     }
