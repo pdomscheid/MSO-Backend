@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<form [formGroup]=\"loginForm\" (ngSubmit)=\"onSubmit(loginForm.value)\" class=\"form-signin\" id=\"form\">ng\n  <h1 class=\"h3 mb-3 font-weight-normal\">Staying Alive</h1>\n  <span>Bitte geben Sie die SA-ID ein:</span>\n  <div class=\"form-group\">\n    <input type=\"text\" class=\"form-control\" id=\"said\" placeholder=\"SA-ID\" formControlName=\"SAID\">\n  </div>\n  <div *ngIf=\"!validSAID\" class=\"alert alert-danger\" role=\"alert\">\n    Ungültige SA-ID.\n  </div>\n  <button type=\"submit\" class=\"btn btn-lg btn-primary btn-block\" id=\"submit\">Abrufen</button>\n  <p class=\"mt-5 mb-3 text-muted\">MSO @ HS-MA WS 2019</p>\n</form>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<form [formGroup]=\"loginForm\" (ngSubmit)=\"onSubmit(loginForm.value)\" class=\"form-signin\" id=\"form\">\n  <h1 class=\"h3 mb-3 font-weight-normal\">Staying Alive</h1>\n  <span>Bitte geben Sie die SA-ID ein:</span>\n  <div class=\"form-group\">\n    <input type=\"text\" class=\"form-control\" id=\"said\" placeholder=\"SA-ID\" formControlName=\"SAID\">\n  </div>\n  <div *ngIf=\"!validSAID\" class=\"alert alert-danger\" role=\"alert\">\n    Ungültige SA-ID.\n  </div>\n  <button type=\"submit\" class=\"btn btn-lg btn-primary btn-block\" id=\"submit\">Abrufen</button>\n  <p class=\"mt-5 mb-3 text-muted\">MSO @ HS-MA WS 2019</p>\n</form>\n");
 
 /***/ }),
 
@@ -924,76 +924,15 @@ let SAIDComponent = class SAIDComponent {
         this.route.paramMap.subscribe(params => {
             this.said = params.get('id');
         });
-        this.data = {
-            "medizinischeInformationen": {
-                "allergien": ['Test'],
-                "blutgruppe": null,
-                "erkankungUndBefunde": [],
-                "informationen": null,
-                "medikamente": [],
-                "organspender": {
-                    "information": null,
-                    "istOrganspender": false
-                },
-                "patientenverfuegung": {
-                    "hatPatientenverfuegung": false,
-                    "information": null
-                }
-            },
-            "persoenlicheDaten": {
-                "anschrift": {
-                    "adresszusatz": null,
-                    "hausnummer": null,
-                    "ort": null,
-                    "plz": null,
-                    "strasse": null
-                },
-                "beruf": null,
-                "geburtsdatum": "2019-12-24",
-                "gewicht": null,
-                "groeße": null,
-                "kontaktdaten": [
-                    {
-                        "email": null,
-                        "handynummer": null,
-                        "telefonnummer": null
-                    }
-                ],
-                "name": "Nachname",
-                "vorname": "Vorname"
-            },
-            "privateDaten": {
-                "notfallkontakte": [],
-                "relevanteDaten": [],
-                "testament": {
-                    "informationen": null,
-                    "notar": {
-                        "kontaktart": null,
-                        "kontaktdaten": {
-                            "email": null,
-                            "handynummer": null,
-                            "telefonnummer": null
-                        },
-                        "name": null
-                    },
-                    "testamentVorhanden": false
-                }
-            },
-            "id": 0
-        };
-        this.mzd = this.data.medizinischeInformationen;
-        this.prid = this.data.privateDaten;
-        this.perd = this.data.persoenlicheDaten;
-        // this.saidService.getData(this.said)
-        //   .subscribe((data: any) => {
-        //       this.data = data;
-        //       this.mzd = this.data.medizinischeInformationen;
-        //       this.prid = this.data.privateDaten;
-        //       this.perd = this.data.persoenlicheDaten;
-        //     },
-        //     error => {
-        //       console.log(error);
-        //     });
+        this.saidService.getData(this.said)
+            .subscribe((data) => {
+            this.data = data;
+            this.mzd = this.data.medizinischeInformationen;
+            this.prid = this.data.privateDaten;
+            this.perd = this.data.persoenlicheDaten;
+        }, error => {
+            console.log(error);
+        });
     }
 };
 SAIDComponent.ctorParameters = () => [
