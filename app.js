@@ -5,9 +5,9 @@ const path = require('path');
 const makeCrud = require('express-json-file-crud').makeCrud;
 
 app.use(function(req, res, next) {
-    console.log(req.url);
-    var match = /\/said\/\d+/.exec(req.url);
-    console.log(JSON.stringify(match))
+	console.log(req.url);
+	var match = /\/said\/\d+/.exec(req.url);
+	console.log(JSON.stringify(match));
 	if (match) {
 		req.url = `/index.html`;
 	}
@@ -16,12 +16,22 @@ app.use(function(req, res, next) {
 
 app.use(express.static('public')); //Serve public files
 
-function addEndpoint(name) {
+function addEndpoint(name, defaultFile) {
 	const folder = path.join(process.cwd(), name);
 
 	if (!fs.existsSync(folder)) {
 		console.log(`Creating folder "${folder}"`);
 		fs.mkdirSync(folder);
+	}
+
+	const fileName = path.join(folder, `${name}.json`);
+	if (!fs.existsSync(fileName)) {
+		if (fs.existsSync(defaultFile)) {
+			console.log(`Copying JSON for ${name}; default data available!`);
+			fs.copyFileSync(defaultFile, fileName);
+		} else {
+			console.log(`Missing JSON for ${name}; no default data available!`);
+		}
 	}
 
 	const crud = makeCrud(name, folder);
@@ -30,7 +40,7 @@ function addEndpoint(name) {
 	console.log(`Added CRUD-endpoint "${name}"`);
 }
 
-addEndpoint('storage');
+addEndpoint('storage', 'STORAGE_DEFAULT.json');
 
 var port = process.env.PORT || 3000;
 console.log(`Starting server on port ${port}...`);

@@ -1,0 +1,59 @@
+[
+  {
+    "medizinischeInformationen": {
+      "allergien": [],
+      "blutgruppe": null,
+      "erkankungUndBefunde": [],
+      "informationen": null,
+      "medikamente": [],
+      "organspender": {
+        "information": null,
+        "istOrganspender": false
+      },
+      "patientenverfuegung": {
+        "hatPatientenverfuegung": false,
+        "information": null
+      }
+    },
+    "persoenlicheDaten": {
+      "anschrift": {
+        "adresszusatz": null,
+        "hausnummer": null,
+        "ort": null,
+        "plz": null,
+        "strasse": null
+      },
+      "beruf": null,
+      "geburtsdatum": "2019-12-24",
+      "gewicht": null,
+      "groeße": null,
+      "kontaktdaten": [
+        {
+          "email": null,
+          "handynummer": null,
+          "telefonnummer": null
+        }
+      ],
+      "name": "Nachname",
+      "e": "Vorname"
+    },
+    "privateDaten": {
+      "notfallkontakte": [],
+      "relevanteDaten": [],
+      "testament": {
+        "informationen": null,
+        "notar": {
+          "kontaktart": null,
+          "kontaktdaten": {
+            "email": null,
+            "handynummer": null,
+            "telefonnummer": null
+          },
+          "name": null
+        },
+        "testamentVorhanden": false
+      }
+    },
+    "id": 0
+  }
+]
