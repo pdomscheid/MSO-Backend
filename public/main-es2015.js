@@ -917,10 +917,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let SAIDComponent = class SAIDComponent {
-    constructor(route, router, saidService) {
+    constructor(route, router, saidService, elementRef) {
         this.route = route;
         this.router = router;
         this.saidService = saidService;
+        this.elementRef = elementRef;
+    }
+    ngAfterViewInit() {
+        this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = '#F0F2F1';
     }
     ngOnInit() {
         this.route.paramMap.subscribe(params => {
@@ -940,7 +944,8 @@ let SAIDComponent = class SAIDComponent {
 SAIDComponent.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
-    { type: _said_service__WEBPACK_IMPORTED_MODULE_3__["SaidService"] }
+    { type: _said_service__WEBPACK_IMPORTED_MODULE_3__["SaidService"] },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"] }
 ];
 SAIDComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({

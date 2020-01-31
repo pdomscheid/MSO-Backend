@@ -1735,15 +1735,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var SAIDComponent =
     /*#__PURE__*/
     function () {
-      function SAIDComponent(route, router, saidService) {
+      function SAIDComponent(route, router, saidService, elementRef) {
         _classCallCheck(this, SAIDComponent);
 
         this.route = route;
         this.router = router;
         this.saidService = saidService;
+        this.elementRef = elementRef;
       }
 
       _createClass(SAIDComponent, [{
+        key: "ngAfterViewInit",
+        value: function ngAfterViewInit() {
+          this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = '#F0F2F1';
+        }
+      }, {
         key: "ngOnInit",
         value: function ngOnInit() {
           var _this6 = this;
@@ -1772,6 +1778,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]
       }, {
         type: _said_service__WEBPACK_IMPORTED_MODULE_3__["SaidService"]
+      }, {
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]
       }];
     };
 
