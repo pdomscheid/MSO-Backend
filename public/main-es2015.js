@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<form [formGroup]=\"loginForm\" (ngSubmit)=\"onSubmit(loginForm.value)\" class=\"form-signin\" id=\"form\">\n  <img class=\"mb-4\" src=\"/docs/4.3/assets/brand/bootstrap-solid.svg\" alt=\"\" width=\"72\" height=\"72\">\n  <h1 class=\"h3 mb-3 font-weight-normal\">Staying Alive</h1>\n  <span>Bitte geben Sie die SA-ID ein:</span>\n  <div class=\"form-group\">\n    <input type=\"text\" class=\"form-control\" id=\"said\" placeholder=\"SA-ID\" formControlName=\"SAID\">\n  </div>\n  <div *ngIf=\"!validSAID\" class=\"alert alert-danger\" role=\"alert\">\n    Ungültige SA-ID.\n  </div>\n  <button type=\"submit\" class=\"btn btn-lg btn-primary btn-block\" id=\"submit\">Abrufen</button>\n  <p class=\"mt-5 mb-3 text-muted\">MSO @ HS-MA WS 2019</p>\n</form>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<form [formGroup]=\"loginForm\" (ngSubmit)=\"onSubmit(loginForm.value)\" class=\"form-signin\" id=\"form\">ng\n  <h1 class=\"h3 mb-3 font-weight-normal\">Staying Alive</h1>\n  <span>Bitte geben Sie die SA-ID ein:</span>\n  <div class=\"form-group\">\n    <input type=\"text\" class=\"form-control\" id=\"said\" placeholder=\"SA-ID\" formControlName=\"SAID\">\n  </div>\n  <div *ngIf=\"!validSAID\" class=\"alert alert-danger\" role=\"alert\">\n    Ungültige SA-ID.\n  </div>\n  <button type=\"submit\" class=\"btn btn-lg btn-primary btn-block\" id=\"submit\">Abrufen</button>\n  <p class=\"mt-5 mb-3 text-muted\">MSO @ HS-MA WS 2019</p>\n</form>\n");
 
 /***/ }),
 
