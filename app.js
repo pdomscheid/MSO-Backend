@@ -5,10 +5,11 @@ const path = require('path');
 const makeCrud = require('express-json-file-crud').makeCrud;
 
 app.use(function(req, res, next) {
-	console.log(req.url);
-	var match = /\/said\/\d+/.exec(req.url);
+    console.log(req.url);
+    var match = /\/said\/\d+/.exec(req.url);
+    console.log(JSON.stringify(match))
 	if (match) {
-		req.url = `/index.html?${match[1]}`;
+		req.url = `/index.html`;
 	}
 	next();
 });
