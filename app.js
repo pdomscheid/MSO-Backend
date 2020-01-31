@@ -4,11 +4,13 @@ const fs = require('fs');
 const path = require('path');
 const makeCrud = require('express-json-file-crud').makeCrud;
 
+const subpages = [ /\/said\/\d+/, /\/medInfos\/\d+/, /\/privateInfos\/\d+/, /\/persoenlicheInfos\/\d+/ ];
+
 app.use(function(req, res, next) {
 	console.log(req.url);
-	var match = /\/said\/\d+/.exec(req.url);
-	console.log(JSON.stringify(match));
-	if (match) {
+	var isMatch = subpages.filter((r) => r.exec(req.url) !== null).length > 0;
+	console.log(isMatch);
+	if (isMatch) {
 		req.url = `/index.html`;
 	}
 	next();
