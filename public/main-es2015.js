@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-navigation said=\"{{said}}\"></app-navigation>\n\n<div *ngIf=\"mzd\">\n  <div>\n    <h1>Medizinische Informationen</h1>\n    <!-- Allergien -->\n    <div>\n      <p>\n        <a class=\"btn btn-primary\" data-toggle=\"collapse\" href=\"#collapseAllergien\" role=\"button\" aria-expanded=\"false\"\n           aria-controls=\"collapseExample\">\n          Allergien:\n        </a>\n      </p>\n      <div class=\"collapse\" id=\"collapseAllergien\">\n        <div class=\"card card-body\">\n          <ul class=\"list-group\">\n            <li *ngFor=\"let allergen of mzd.allergien\" class=\"list-group-item\">{{allergen}}</li>\n          </ul>\n        </div>\n      </div>\n    </div>\n\n    <!-- Erkrankungen und Befunde -->\n    <div>\n      <p>\n        <a class=\"btn btn-primary\" data-toggle=\"collapse\" href=\"#collapseErkrankungen\" role=\"button\"\n           aria-expanded=\"false\" aria-controls=\"collapseExample\">\n          Erkrankungen und Befunde:\n        </a>\n      </p>\n      <div class=\"collapse\" id=\"collapseErkrankungen\">\n        <div class=\"card card-body\">\n          <ul class=\"list-group\">\n            <li *ngFor=\"let allergen of mzd.erkankungUndBefunde\" class=\"list-group-item\">{{allergen}}</li>\n          </ul>\n        </div>\n      </div>\n    </div>\n\n    <!-- Medikamente -->\n    <div>\n      <p>\n        <a class=\"btn btn-primary\" data-toggle=\"collapse\" href=\"#collapseMedikamente\" role=\"button\"\n           aria-expanded=\"false\" aria-controls=\"collapseExample\">\n          Medikamente:\n        </a>\n      </p>\n      <div class=\"collapse\" id=\"collapseMedikamente\">\n        <div class=\"card card-body\">\n          <ul class=\"list-group\">\n            <li *ngFor=\"let allergen of mzd.medikamente\" class=\"list-group-item\">{{allergen}}</li>\n          </ul>\n        </div>\n      </div>\n    </div>\n\n    <!-- Organspender -->\n    <div>\n      <ng-template\n        *ngIf=\"mzd.organspender.istOrganspender;then organspender; else notOrganspender\">\n      </ng-template>\n\n      <ng-template #organspender>\n        <p><b>Organspender:</b> Ja</p>\n      </ng-template>\n\n      <ng-template #notOrganspender>\n        <p><b>Organspender:</b> Nein</p>\n      </ng-template>\n      <textarea readonly class=\"form-control\" rows=\"3\">{{mzd.organspender.informationen}}</textarea>\n    </div>\n\n    <div>\n      <p><b>Informationen:</b> {{mzd.informationen}}</p>\n    </div>\n\n    <!-- Patientenverfügung -->\n    <div>\n      <ng-template\n        *ngIf=\"mzd.organspender.istOrganspender;then organspender; else notOrganspender\">\n      </ng-template>\n\n      <ng-template #organspender>\n        <p><b>Organspender:</b> Ja</p>\n      </ng-template>\n\n      <ng-template #notOrganspender>\n        <p><b>Organspender:</b> Nein</p>\n      </ng-template>\n      <textarea readonly class=\"form-control\" rows=\"3\">{{mzd.organspender.informationen}}</textarea>\n    </div>\n\n    <div>\n      <ng-template\n        *ngIf=\"mzd.patientenverfuegung.hatPatientenverfuegung;then patientenverfuegung; else notPatientenverfuegung\">\n      </ng-template>\n\n      <ng-template #patientenverfuegung>\n        <p><b>Patientenverfügung:</b> Ja</p>\n      </ng-template>\n\n      <ng-template #notPatientenverfuegung>\n        <p><b>Patientenverfügung:</b> Nein</p>\n      </ng-template>\n      <textarea readonly class=\"form-control\" rows=\"3\">{{mzd.patientenverfuegung.information}}</textarea>\n    </div>\n\n    <div>\n      <p><b>Informationen:</b> {{mzd.informationen}}</p>\n    </div>\n\n    <div>\n      <p><b>Blutgruppe:</b> {{mzd.blutgruppe}}</p>\n    </div>\n  </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-navigation said=\"{{said}}\"></app-navigation>\n\n<div *ngIf=\"mzd\">\n  <div class=\"jumbotron jumbotron-fluid\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <h3 class=\"display-4\">Medizinische Informationen</h3>\n      </div>\n      <!-- Allergien-->\n      <p class=\"lead\" data-toggle=\"collapse\" href=\"#collapseAllergien\" aria-expanded=\"false\"\n         aria-controls=\"collapseExample\">Allergien</p>\n      <hr class=\"my-4\">\n      <div class=\"collapse show\" id=\"collapseAllergien\">\n        <div class=\"card card-body\">\n          <ul class=\"list-group\">\n            <li *ngFor=\"let allergen of mzd.allergien\" class=\"list-group-item\">{{allergen}}</li>\n          </ul>\n        </div>\n        <hr class=\"my-4\">\n      </div>\n\n      <!--Erkrankungen-->\n      <p class=\"lead\" data-toggle=\"collapse\" href=\"#collapseErkrankungen\" aria-expanded=\"false\"\n         aria-controls=\"collapseExample\">Erkrankungen und Befunde:</p>\n      <hr class=\"my-4\">\n      <div class=\"collapse show\" id=\"collapseErkrankungen\">\n        <div class=\"card card-body\">\n          <ul class=\"list-group\">\n            <li *ngFor=\"let allergen of mzd.erkankungUndBefunde\" class=\"list-group-item\">{{allergen}}</li>\n          </ul>\n        </div>\n        <hr class=\"my-4\">\n      </div>\n\n      <!--Medikamente-->\n      <p class=\"lead\" data-toggle=\"collapse\" href=\"#collapseMedikamente\" aria-expanded=\"false\"\n         aria-controls=\"collapseExample\">Medikamente</p>\n      <hr class=\"my-4\">\n      <div class=\"collapse show\" id=\"collapseMedikamente\">\n        <div class=\"card card-body\">\n          <ul class=\"list-group\">\n            <li *ngFor=\"let allergen of mzd.medikamente\" class=\"list-group-item\">{{allergen}}</li>\n          </ul>\n        </div>\n        <hr class=\"my-4\">\n      </div>\n\n      <!--Blutgruppe-->\n      <div>\n        <p class=\"lead\">Blutgruppe: {{mzd.blutgruppe}}</p>\n        <hr class=\"my-4\">\n      </div>\n\n      <div class=\"row\">\n        <!--Organspender-->\n        <div class=\"col\">\n          <p class=\"lead\" data-toggle=\"collapse\" href=\"#collapseOrgaPatient\" aria-expanded=\"false\"\n             aria-controls=\"collapseExample\">Organspender:\n            <ng-template\n              *ngIf=\"mzd.organspender.istOrganspender;then organspender; else notOrganspender\">\n            </ng-template>\n            <ng-template #organspender>Ja</ng-template>\n            <ng-template #notOrganspender>Nein</ng-template>\n          </p>\n        </div>\n\n        <!--Patientenverfügung-->\n        <div class=\"col\">\n          <p class=\"lead\" data-toggle=\"collapse\" href=\"#collapseOrgaPatient\" aria-expanded=\"false\"\n             aria-controls=\"collapseExample\">Patientenverfügung:\n            <ng-template\n              *ngIf=\"mzd.patientenverfuegung.hatPatientenverfuegung;then patient; else notPatient\">\n            </ng-template>\n            <ng-template #patient>Ja</ng-template>\n            <ng-template #notPatient>Nein</ng-template>\n          </p>\n        </div>\n      </div>\n\n      <!--Organspender und Patientenverfügungs - Informationen-->\n      <div class=\"collapse show\" id=\"collapseOrgaPatient\">\n        <div class=\"row\">\n          <div class=\"col\">\n            <div class=\"card card-body\">\n              <p>{{mzd.organspender.information}}</p>\n            </div>\n            <hr class=\"my-4\">\n          </div>\n          <div class=\"col\">\n            <div class=\"card card-body\">\n              <p>{{mzd.patientenverfuegung.information}}</p>\n            </div>\n            <hr class=\"my-4\">\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n");
 
 /***/ }),
 
@@ -84,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-navigation said=\"{{said}}\"></app-navigation>\n\n<div *ngIf=\"perd\">\n  <div>\n    <h1>Persönliche Informationen</h1>\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col\">\n          <label for=\"vorname\"><h4>Vorname</h4></label>\n          <input readonly type=\"text\" class=\"form-control\" id=\"vorname\" placeholder=\"{{perd.vorname}}\">\n        </div>\n        <div class=\"col\">\n          <label for=\"nachname\"><h4>Nachname</h4></label>\n          <input readonly type=\"text\" class=\"form-control\" id=\"nachname\" placeholder=\"{{perd.name}}\">\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"col\">\n          <label for=\"adresse\"><h4>Adresse</h4></label>\n          <input readonly type=\"text\" class=\"form-control\" id=\"adresse\"\n                 placeholder=\"{{perd.anschrift.strasse}} {{perd.anschrift.hausnummer}} {{perd.anschrift.adresszusatz}},\n              {{perd.anschrift.plz}} {{perd.anschrift.ort}}\">\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"col\">\n          <label for=\"date\"><h4>Geburtsdatum</h4></label>\n          <input readonly type=\"text\" class=\"form-control\" id=\"date\" placeholder=\"{{perd.geburtsdatum}}\">\n        </div>\n        <div class=\"col\">\n          <label for=\"beruf\"><h4>Beruf</h4></label>\n          <input readonly type=\"text\" class=\"form-control\" name=\"mobile\" id=\"beruf\" placeholder=\"{{perd.beruf}}\">\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"col\">\n          <label for=\"gewicht\"><h4>Gewicht</h4></label>\n          <input readonly type=\"text\" class=\"form-control\" id=\"gewicht\" placeholder=\"{{perd.gewicht}}\">\n        </div>\n        <div class=\"col\">\n          <label for=\"groesse\"><h4>Größe</h4></label>\n          <input readonly type=\"text\" class=\"form-control\" name=\"mobile\" id=\"groesse\" placeholder=\"{{perd.groesse}}\">\n        </div>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col\">\n        <p>\n          <a class=\"btn btn-primary\" data-toggle=\"collapse\" href=\"#collapseKD\" role=\"button\" aria-expanded=\"false\"\n             aria-controls=\"collapseExample\">\n            Kontaktdaten:\n          </a>\n        </p>\n        <div class=\"collapse\" id=\"collapseKD\">\n          <div class=\"card card-body\">\n            <ul class=\"list-group\">\n              <li class=\"list-group-item\" *ngFor=\"let kontakt of perd.kontaktdaten\">\n                <div class=\"container\">\n                  <div class=\"row\">\n                    <div class=\"col\">\n                      <p><b>Email:</b> {{kontakt.email}}</p>\n                      <p><b>Handy:</b> {{kontakt.handynummer}}</p>\n                      <p><b>Telefon:</b> {{kontakt.telefonnummer}}</p>\n                    </div>\n                  </div>\n                </div>\n              </li>\n            </ul>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-navigation said=\"{{said}}\"></app-navigation>\n\n<div *ngIf=\"perd\">\n  <div class=\"jumbotron jumbotron-fluid\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <h3 class=\"display-4\">Persönliche Informationen</h3>\n      </div>\n      <!--Vor- und Nachname-->\n      <div class=\"row\">\n        <div class=\"col\">\n          <h4>Vorname</h4>\n          <input readonly type=\"text\" class=\"form-control\" placeholder=\"{{perd.vorname}}\">\n          <hr class=\"my-4\">\n        </div>\n        <div class=\"col\">\n          <h4>Nachname</h4>\n          <input readonly type=\"text\" class=\"form-control\" placeholder=\"{{perd.name}}\">\n          <hr class=\"my-4\">\n        </div>\n      </div>\n\n      <!--Geburtsdatum- und Beruf-->\n      <div class=\"row\">\n        <div class=\"col\">\n          <h4>Geburtsdatum</h4>\n          <input readonly type=\"text\" class=\"form-control\" placeholder=\"{{perd.geburtsdatum}}\">\n          <hr class=\"my-4\">\n        </div>\n        <div class=\"col\">\n          <h4>Beruf</h4>\n          <input readonly type=\"text\" class=\"form-control\" placeholder=\"{{perd.beruf}}\">\n          <hr class=\"my-4\">\n        </div>\n      </div>\n\n      <!--Gewicht- und Groesse-->\n      <div class=\"row\">\n        <div class=\"col\">\n          <h4>Gewicht</h4>\n          <input readonly type=\"text\" class=\"form-control\" placeholder=\"{{perd.gewicht}}\">\n          <hr class=\"my-4\">\n        </div>\n        <div class=\"col\">\n          <h4>Größe</h4>\n          <input readonly type=\"text\" class=\"form-control\" placeholder=\"{{perd.groesse}}\">\n          <hr class=\"my-4\">\n        </div>\n      </div>\n\n      <!--Adresse-->\n      <div class=\"row\">\n        <div class=\"col\">\n          <h4>Adresse</h4>\n          <input readonly type=\"text\" class=\"form-control\" placeholder=\"{{perd.anschrift.strasse}}\n      {{perd.anschrift.hausnummer}} {{perd.anschrift.adresszusatz}},{{perd.anschrift.plz}} {{perd.anschrift.ort}}\">\n          <hr class=\"my-4\">\n        </div>\n      </div>\n\n      <!--Kontaktdaten-->\n      <div>\n        <h4 data-toggle=\"collapse\" href=\"#collapseKontakt\" aria-expanded=\"false\"\n            aria-controls=\"collapseExample\">Kontaktdaten</h4>\n        <hr class=\"my-4\">\n        <div class=\"collapse show\" id=\"collapseKontakt\">\n          <div class=\"card card-body\">\n            <ul class=\"list-group\">\n              <li *ngFor=\"let kontakt of perd.kontaktdaten\" class=\"list-group-item\">\n                <div class=\"container\">\n                  <div class=\"row\">\n                    <div class=\"col\">\n                      <p class=\"kontaktFarbe\"><b>Email:</b> {{kontakt.email}}</p>\n                      <p class=\"kontaktFarbe\"><b>Handy:</b> {{kontakt.handynummer}}</p>\n                      <p class=\"kontaktFarbe\"><b>Telefon:</b> {{kontakt.telefonnummer}}</p>\n                    </div>\n                  </div>\n                </div>\n              </li>\n            </ul>\n          </div>\n          <hr class=\"my-4\">\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n");
 
 /***/ }),
 
@@ -97,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-navigation said=\"{{said}}\"></app-navigation>\n<div *ngIf=\"prid\">\n  <div>\n    <h1>Private Informationen</h1>\n    <!-- Notfallkontakte -->\n    <div>\n      <p>\n        <a class=\"btn btn-primary\" data-toggle=\"collapse\" href=\"#collapseNotfallkontakte\" role=\"button\"\n           aria-expanded=\"false\" aria-controls=\"collapseExample\">\n          Notfallkontakte:\n        </a>\n      </p>\n      <div class=\"collapse\" id=\"collapseNotfallkontakte\">\n        <div class=\"card card-body\">\n          <ul class=\"list-group\">\n            <li *ngFor=\"let notfall of prid.notfallkontakte\" class=\"list-group-item\">{{notfall}}</li>\n          </ul>\n        </div>\n      </div>\n    </div>\n\n    <!-- Relevante Daten -->\n    <div>\n      <p>\n        <a class=\"btn btn-primary\" data-toggle=\"collapse\" href=\"#collapserdata\" role=\"button\" aria-expanded=\"false\"\n           aria-controls=\"collapseExample\">\n          Relevante Daten:\n        </a>\n      </p>\n      <div class=\"collapse\" id=\"collapserdata\">\n        <div class=\"card card-body\">\n          <ul class=\"list-group\">\n            <li *ngFor=\"let data of prid.relevanteDaten\" class=\"list-group-item\">{{data}}</li>\n          </ul>\n        </div>\n      </div>\n    </div>\n\n    <!-- Testament -->\n    <div *ngIf=\"prid.testament.testamentVorhanden\">\n      <p>\n        <a class=\"btn btn-primary\" data-toggle=\"collapse\" href=\"#collapseTestament\" role=\"button\" aria-expanded=\"false\"\n           aria-controls=\"collapseExample\">\n          Testament:\n        </a>\n      </p>\n      <div class=\"collapse\" id=\"collapseTestament\">\n        <textarea readonly class=\"form-control\" rows=\"3\">{{prid.testament.informationen}}</textarea>\n      </div>\n    </div>\n\n    <!-- Notar -->\n    <div *ngIf=\"prid.testament.testamentVorhanden\">\n      <p><b>Name:</b> {{prid.testament.notar.name}}</p>\n      <p><b>Kontaktart:</b> {{prid.testament.notar.kontaktart}}</p>\n      <p><b>Email:</b> {{prid.testament.notar.kontaktdaten.email}}</p>\n      <p><b>Handy:</b> {{prid.testament.notar.handynummer}}</p>\n      <p><b>Telefon:</b> {{prid.testament.notar.telefonnummer}}</p>\n    </div>\n  </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-navigation said=\"{{said}}\"></app-navigation>\n<div *ngIf=\"prid\">\n  <div class=\"jumbotron jumbotron-fluid\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <h3 class=\"display-4\">Private Informationen</h3>\n      </div>\n      <!--Notfallkontakte-->\n      <p class=\"lead\" data-toggle=\"collapse\" href=\"#collapseNotfallKontakte\" aria-expanded=\"false\"\n         aria-controls=\"collapseExample\">Notfallkontakte</p>\n      <hr class=\"my-4\">\n      <div class=\"collapse show\" id=\"collapseNotfallKontakte\">\n        <div class=\"card card-body\">\n          <ul class=\"list-group\">\n            <li *ngFor=\"let notfall of prid.notfallkontakte\" class=\"list-group-item\">{{notfall}}</li>\n          </ul>\n        </div>\n        <hr class=\"my-4\">\n      </div>\n\n      <!--Relevtante Daten-->\n      <p class=\"lead\" data-toggle=\"collapse\" href=\"#collapseRelevanteDaten\" aria-expanded=\"false\"\n         aria-controls=\"collapseExample\">Relevante Daten</p>\n      <hr class=\"my-4\">\n      <div class=\"collapse show\" id=\"collapseRelevanteDaten\">\n        <div class=\"card card-body\">\n          <ul class=\"list-group\">\n            <li *ngFor=\"let data of prid.relevanteDaten\" class=\"list-group-item\">{{data}}</li>\n          </ul>\n        </div>\n        <hr class=\"my-4\">\n      </div>\n\n      <!--Testament -->\n      <div *ngIf=\"prid.testament.testamentVorhanden\">\n        <p class=\"lead\" data-toggle=\"collapse\" href=\"#collapseTestament\" aria-expanded=\"false\"\n           aria-controls=\"collapseExample\">Testament</p>\n        <hr class=\"my-4\">\n        <div class=\"collapse show\" id=\"collapseTestament\">\n          <div class=\"card card-body\">\n            <textarea readonly class=\"form-control\" rows=\"3\">{{prid.testament.informationen}}</textarea>\n          </div>\n          <hr class=\"my-4\">\n        </div>\n\n        <!--Notar-->\n        <div *ngIf=\"prid.testament.testamentVorhanden\">\n          <p><b>Name:</b> {{prid.testament.notar.name}}</p>\n          <p><b>Kontaktart:</b> {{prid.testament.notar.kontaktart}}</p>\n          <p><b>Email:</b> {{prid.testament.notar.kontaktdaten.email}}</p>\n          <p><b>Handy:</b> {{prid.testament.notar.handynummer}}</p>\n          <p><b>Telefon:</b> {{prid.testament.notar.telefonnummer}}</p>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n");
 
 /***/ }),
 
@@ -110,7 +110,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-navigation said=\"{{said}}\"></app-navigation>\n<div *ngIf=\"data\">\n  <div>\n    <h1>Medizinische Informationen</h1>\n    <!-- Allergien -->\n    <div>\n      <p>\n        <a class=\"btn btn-primary\" data-toggle=\"collapse\" href=\"#collapseAllergien\" role=\"button\" aria-expanded=\"false\"\n           aria-controls=\"collapseExample\">\n          Allergien:\n        </a>\n      </p>\n      <div class=\"collapse\" id=\"collapseAllergien\">\n        <div class=\"card card-body\">\n          <ul class=\"list-group\">\n            <li *ngFor=\"let allergen of mzd.allergien\" class=\"list-group-item\">{{allergen}}</li>\n          </ul>\n        </div>\n      </div>\n    </div>\n\n    <!-- Erkrankungen und Befunde -->\n    <div>\n      <p>\n        <a class=\"btn btn-primary\" data-toggle=\"collapse\" href=\"#collapseErkrankungen\" role=\"button\"\n           aria-expanded=\"false\" aria-controls=\"collapseExample\">\n          Erkrankungen und Befunde:\n        </a>\n      </p>\n      <div class=\"collapse\" id=\"collapseErkrankungen\">\n        <div class=\"card card-body\">\n          <ul class=\"list-group\">\n            <li *ngFor=\"let allergen of mzd.erkankungUndBefunde\" class=\"list-group-item\">{{allergen}}</li>\n          </ul>\n        </div>\n      </div>\n    </div>\n\n    <!-- Medikamente -->\n    <div>\n      <p>\n        <a class=\"btn btn-primary\" data-toggle=\"collapse\" href=\"#collapseMedikamente\" role=\"button\"\n           aria-expanded=\"false\" aria-controls=\"collapseExample\">\n          Medikamente:\n        </a>\n      </p>\n      <div class=\"collapse\" id=\"collapseMedikamente\">\n        <div class=\"card card-body\">\n          <ul class=\"list-group\">\n            <li *ngFor=\"let allergen of mzd.medikamente\" class=\"list-group-item\">{{allergen}}</li>\n          </ul>\n        </div>\n      </div>\n    </div>\n\n    <!-- Organspender -->\n    <div>\n      <ng-template\n        *ngIf=\"mzd.organspender.istOrganspender;then organspender; else notOrganspender\">\n      </ng-template>\n\n      <ng-template #organspender>\n        <p><b>Organspender:</b> Ja</p>\n      </ng-template>\n\n      <ng-template #notOrganspender>\n        <p><b>Organspender:</b> Nein</p>\n      </ng-template>\n      <textarea readonly class=\"form-control\" rows=\"3\">{{mzd.organspender.informationen}}</textarea>\n    </div>\n\n    <div>\n      <p><b>Informationen:</b> {{mzd.informationen}}</p>\n    </div>\n\n    <!-- Patientenverfügung -->\n    <div>\n      <ng-template\n        *ngIf=\"mzd.organspender.istOrganspender;then organspender; else notOrganspender\">\n      </ng-template>\n\n      <ng-template #organspender>\n        <p><b>Organspender:</b> Ja</p>\n      </ng-template>\n\n      <ng-template #notOrganspender>\n        <p><b>Organspender:</b> Nein</p>\n      </ng-template>\n      <textarea readonly class=\"form-control\" rows=\"3\">{{mzd.organspender.informationen}}</textarea>\n    </div>\n\n    <div>\n      <ng-template\n        *ngIf=\"mzd.patientenverfuegung.hatPatientenverfuegung;then patientenverfuegung; else notPatientenverfuegung\">\n      </ng-template>\n\n      <ng-template #patientenverfuegung>\n        <p><b>Patientenverfügung:</b> Ja</p>\n      </ng-template>\n\n      <ng-template #notPatientenverfuegung>\n        <p><b>Patientenverfügung:</b> Nein</p>\n      </ng-template>\n      <textarea readonly class=\"form-control\" rows=\"3\">{{mzd.patientenverfuegung.information}}</textarea>\n    </div>\n\n    <div>\n      <p><b>Informationen:</b> {{mzd.informationen}}</p>\n    </div>\n\n    <div>\n      <p><b>Blutgruppe:</b> {{mzd.blutgruppe}}</p>\n    </div>\n  </div>\n\n  <div>\n    <h1>Persönliche Informationen</h1>\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col\">\n          <label for=\"vorname\"><h4>Vorname</h4></label>\n          <input readonly type=\"text\" class=\"form-control\" id=\"vorname\" placeholder=\"{{perd.vorname}}\">\n        </div>\n        <div class=\"col\">\n          <label for=\"nachname\"><h4>Nachname</h4></label>\n          <input readonly type=\"text\" class=\"form-control\" id=\"nachname\" placeholder=\"{{perd.name}}\">\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"col\">\n          <label for=\"adresse\"><h4>Adresse</h4></label>\n          <input readonly type=\"text\" class=\"form-control\" id=\"adresse\"\n                 placeholder=\"{{perd.anschrift.strasse}} {{perd.anschrift.hausnummer}} {{perd.anschrift.adresszusatz}},\n              {{perd.anschrift.plz}} {{perd.anschrift.ort}}\">\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"col\">\n          <label for=\"date\"><h4>Geburtsdatum</h4></label>\n          <input readonly type=\"text\" class=\"form-control\" id=\"date\" placeholder=\"{{perd.geburtsdatum}}\">\n        </div>\n        <div class=\"col\">\n          <label for=\"beruf\"><h4>Beruf</h4></label>\n          <input readonly type=\"text\" class=\"form-control\" name=\"mobile\" id=\"beruf\" placeholder=\"{{perd.beruf}}\">\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"col\">\n          <label for=\"gewicht\"><h4>Gewicht</h4></label>\n          <input readonly type=\"text\" class=\"form-control\" id=\"gewicht\" placeholder=\"{{perd.gewicht}}\">\n        </div>\n        <div class=\"col\">\n          <label for=\"groesse\"><h4>Größe</h4></label>\n          <input readonly type=\"text\" class=\"form-control\" name=\"mobile\" id=\"groesse\" placeholder=\"{{perd.groesse}}\">\n        </div>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col\">\n        <p>\n          <a class=\"btn btn-primary\" data-toggle=\"collapse\" href=\"#collapseKD\" role=\"button\" aria-expanded=\"false\"\n             aria-controls=\"collapseExample\">\n            Kontaktdaten:\n          </a>\n        </p>\n        <div class=\"collapse\" id=\"collapseKD\">\n          <div class=\"card card-body\">\n            <ul class=\"list-group\">\n              <li class=\"list-group-item\" *ngFor=\"let kontakt of perd.kontaktdaten\">\n                <div class=\"container\">\n                  <div class=\"row\">\n                    <div class=\"col\">\n                      <p><b>Email:</b> {{kontakt.email}}</p>\n                      <p><b>Handy:</b> {{kontakt.handynummer}}</p>\n                      <p><b>Telefon:</b> {{kontakt.telefonnummer}}</p>\n                    </div>\n                  </div>\n                </div>\n              </li>\n            </ul>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <div>\n    <h1>Private Informationen</h1>\n    <!-- Notfallkontakte -->\n    <div>\n      <p>\n        <a class=\"btn btn-primary\" data-toggle=\"collapse\" href=\"#collapseNotfallkontakte\" role=\"button\"\n           aria-expanded=\"false\" aria-controls=\"collapseExample\">\n          Notfallkontakte:\n        </a>\n      </p>\n      <div class=\"collapse\" id=\"collapseNotfallkontakte\">\n        <div class=\"card card-body\">\n          <ul class=\"list-group\">\n            <li *ngFor=\"let notfall of prid.notfallkontakte\" class=\"list-group-item\">{{notfall}}</li>\n          </ul>\n        </div>\n      </div>\n    </div>\n\n    <!-- Relevante Daten -->\n    <div>\n      <p>\n        <a class=\"btn btn-primary\" data-toggle=\"collapse\" href=\"#collapserdata\" role=\"button\" aria-expanded=\"false\"\n           aria-controls=\"collapseExample\">\n          Relevante Daten:\n        </a>\n      </p>\n      <div class=\"collapse\" id=\"collapserdata\">\n        <div class=\"card card-body\">\n          <ul class=\"list-group\">\n            <li *ngFor=\"let data of prid.relevanteDaten\" class=\"list-group-item\">{{data}}</li>\n          </ul>\n        </div>\n      </div>\n    </div>\n\n    <!-- Testament -->\n    <div *ngIf=\"prid.testament.testamentVorhanden\">\n      <p>\n        <a class=\"btn btn-primary\" data-toggle=\"collapse\" href=\"#collapseTestament\" role=\"button\" aria-expanded=\"false\"\n           aria-controls=\"collapseExample\">\n          Testament:\n        </a>\n      </p>\n      <div class=\"collapse\" id=\"collapseTestament\">\n        <textarea readonly class=\"form-control\" rows=\"3\">{{prid.testament.informationen}}</textarea>\n      </div>\n    </div>\n\n    <!-- Notar -->\n    <div *ngIf=\"prid.testament.testamentVorhanden\">\n      <p><b>Name:</b> {{prid.testament.notar.name}}</p>\n      <p><b>Kontaktart:</b> {{prid.testament.notar.kontaktart}}</p>\n      <p><b>Email:</b> {{prid.testament.notar.kontaktdaten.email}}</p>\n      <p><b>Handy:</b> {{prid.testament.notar.handynummer}}</p>\n      <p><b>Telefon:</b> {{prid.testament.notar.telefonnummer}}</p>\n    </div>\n  </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-navigation said=\"{{said}}\"></app-navigation>\n<div *ngIf=\"data\">\n  <div class=\"jumbotron jumbotron-fluid\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <h3 class=\"display-4\" id=\"pers\">Persönliche Informationen</h3>\n      </div>\n      <!--Vor- und Nachname-->\n      <div class=\"row\">\n        <div class=\"col\">\n          <h4>Vorname</h4>\n          <input readonly type=\"text\" class=\"form-control\" placeholder=\"{{perd.vorname}}\">\n          <hr class=\"my-4\">\n        </div>\n        <div class=\"col\">\n          <h4>Nachname</h4>\n          <input readonly type=\"text\" class=\"form-control\" placeholder=\"{{perd.name}}\">\n          <hr class=\"my-4\">\n        </div>\n      </div>\n\n      <!--Geburtsdatum- und Beruf-->\n      <div class=\"row\">\n        <div class=\"col\">\n          <h4>Geburtsdatum</h4>\n          <input readonly type=\"text\" class=\"form-control\" placeholder=\"{{perd.geburtsdatum}}\">\n          <hr class=\"my-4\">\n        </div>\n        <div class=\"col\">\n          <h4>Beruf</h4>\n          <input readonly type=\"text\" class=\"form-control\" placeholder=\"{{perd.beruf}}\">\n          <hr class=\"my-4\">\n        </div>\n      </div>\n\n      <!--Gewicht- und Groesse-->\n      <div class=\"row\">\n        <div class=\"col\">\n          <h4>Gewicht</h4>\n          <input readonly type=\"text\" class=\"form-control\" placeholder=\"{{perd.gewicht}}\">\n          <hr class=\"my-4\">\n        </div>\n        <div class=\"col\">\n          <h4>Größe</h4>\n          <input readonly type=\"text\" class=\"form-control\" placeholder=\"{{perd.groesse}}\">\n          <hr class=\"my-4\">\n        </div>\n      </div>\n\n      <!--Adresse-->\n      <div class=\"row\">\n        <div class=\"col\">\n          <h4>Adresse</h4>\n          <input readonly type=\"text\" class=\"form-control\" placeholder=\"{{perd.anschrift.strasse}}\n      {{perd.anschrift.hausnummer}} {{perd.anschrift.adresszusatz}},{{perd.anschrift.plz}} {{perd.anschrift.ort}}\">\n          <hr class=\"my-4\">\n        </div>\n      </div>\n\n      <!--Kontaktdaten-->\n      <div>\n        <h4 data-toggle=\"collapse\" href=\"#collapseKontakt\" aria-expanded=\"false\"\n            aria-controls=\"collapseExample\">Kontaktdaten</h4>\n        <hr class=\"my-4\">\n        <div class=\"collapse show\" id=\"collapseKontakt\">\n          <div class=\"card card-body\">\n            <ul class=\"list-group\">\n              <li *ngFor=\"let kontakt of perd.kontaktdaten\" class=\"list-group-item\">\n                <div class=\"container\">\n                  <div class=\"row\">\n                    <div class=\"col\">\n                      <p><b>Email:</b> {{kontakt.email}}</p>\n                      <p><b>Handy:</b> {{kontakt.handynummer}}</p>\n                      <p><b>Telefon:</b> {{kontakt.telefonnummer}}</p>\n                    </div>\n                  </div>\n                </div>\n              </li>\n            </ul>\n          </div>\n          <hr class=\"my-4\">\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"jumbotron jumbotron-fluid\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <h3 class=\"display-4\" id=\"med\">Medizinische Informationen</h3>\n      </div>\n      <!-- Allergien-->\n      <p class=\"lead\" data-toggle=\"collapse\" href=\"#collapseAllergien\" aria-expanded=\"false\"\n         aria-controls=\"collapseExample\">Allergien</p>\n      <hr class=\"my-4\">\n      <div class=\"collapse show\" id=\"collapseAllergien\">\n        <div class=\"card card-body\">\n          <ul class=\"list-group\">\n            <li *ngFor=\"let allergen of mzd.allergien\" class=\"list-group-item\">{{allergen}}</li>\n          </ul>\n        </div>\n        <hr class=\"my-4\">\n      </div>\n\n      <!--Erkrankungen-->\n      <p class=\"lead\" data-toggle=\"collapse\" href=\"#collapseErkrankungen\" aria-expanded=\"false\"\n         aria-controls=\"collapseExample\">Erkrankungen und Befunde:</p>\n      <hr class=\"my-4\">\n      <div class=\"collapse show\" id=\"collapseErkrankungen\">\n        <div class=\"card card-body\">\n          <ul class=\"list-group\">\n            <li *ngFor=\"let allergen of mzd.erkankungUndBefunde\" class=\"list-group-item\">{{allergen}}</li>\n          </ul>\n        </div>\n        <hr class=\"my-4\">\n      </div>\n\n      <!--Medikamente-->\n      <p class=\"lead\" data-toggle=\"collapse\" href=\"#collapseMedikamente\" aria-expanded=\"false\"\n         aria-controls=\"collapseExample\">Medikamente</p>\n      <hr class=\"my-4\">\n      <div class=\"collapse show\" id=\"collapseMedikamente\">\n        <div class=\"card card-body\">\n          <ul class=\"list-group\">\n            <li *ngFor=\"let allergen of mzd.medikamente\" class=\"list-group-item\">{{allergen}}</li>\n          </ul>\n        </div>\n        <hr class=\"my-4\">\n      </div>\n\n      <!--Blutgruppe-->\n      <div>\n        <p class=\"lead\">Blutgruppe: {{mzd.blutgruppe}}</p>\n        <hr class=\"my-4\">\n      </div>\n\n      <div class=\"row\">\n        <!--Organspender-->\n        <div class=\"col\">\n          <p class=\"lead\" data-toggle=\"collapse\" href=\"#collapseOrgaPatient\" aria-expanded=\"false\"\n             aria-controls=\"collapseExample\">Organspender:\n            <ng-template\n              *ngIf=\"mzd.organspender.istOrganspender;then organspender; else notOrganspender\">\n            </ng-template>\n            <ng-template #organspender>Ja</ng-template>\n            <ng-template #notOrganspender>Nein</ng-template>\n          </p>\n        </div>\n\n        <!--Patientenverfügung-->\n        <div class=\"col\">\n          <p class=\"lead\" data-toggle=\"collapse\" href=\"#collapseOrgaPatient\" aria-expanded=\"false\"\n             aria-controls=\"collapseExample\">Patientenverfügung:\n            <ng-template\n              *ngIf=\"mzd.patientenverfuegung.hatPatientenverfuegung;then patient; else notPatient\">\n            </ng-template>\n            <ng-template #patient>Ja</ng-template>\n            <ng-template #notPatient>Nein</ng-template>\n          </p>\n        </div>\n      </div>\n\n      <!--Organspender und Patientenverfügungs - Informationen-->\n      <div class=\"collapse show\" id=\"collapseOrgaPatient\">\n        <div class=\"row\">\n          <div class=\"col\">\n            <div class=\"card card-body\">\n              <p>{{mzd.organspender.information}}</p>\n            </div>\n            <hr class=\"my-4\">\n          </div>\n          <div class=\"col\">\n            <div class=\"card card-body\">\n              <p>{{mzd.patientenverfuegung.information}}</p>\n            </div>\n            <hr class=\"my-4\">\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"jumbotron jumbotron-fluid\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <h3 class=\"display-4\" id=\"priv\">Private Informationen</h3>\n      </div>\n      <!--Notfallkontakte-->\n      <p class=\"lead\" data-toggle=\"collapse\" href=\"#collapseNotfallKontakte\" aria-expanded=\"false\"\n         aria-controls=\"collapseExample\">Notfallkontakte</p>\n      <hr class=\"my-4\">\n      <div class=\"collapse show\" id=\"collapseNotfallKontakte\">\n        <div class=\"card card-body\">\n          <ul class=\"list-group\">\n            <li *ngFor=\"let notfall of prid.notfallkontakte\" class=\"list-group-item\">{{notfall}}</li>\n          </ul>\n        </div>\n        <hr class=\"my-4\">\n      </div>\n\n      <!--Relevtante Daten-->\n      <p class=\"lead\" data-toggle=\"collapse\" href=\"#collapseRelevanteDaten\" aria-expanded=\"false\"\n         aria-controls=\"collapseExample\">Relevante Daten</p>\n      <hr class=\"my-4\">\n      <div class=\"collapse show\" id=\"collapseRelevanteDaten\">\n        <div class=\"card card-body\">\n          <ul class=\"list-group\">\n            <li *ngFor=\"let data of prid.relevanteDaten\" class=\"list-group-item\">{{data}}</li>\n          </ul>\n        </div>\n        <hr class=\"my-4\">\n      </div>\n\n      <!--Testament -->\n      <div *ngIf=\"prid.testament.testamentVorhanden\">\n        <p class=\"lead\" data-toggle=\"collapse\" href=\"#collapseTestament\" aria-expanded=\"false\"\n           aria-controls=\"collapseExample\">Testament</p>\n        <hr class=\"my-4\">\n        <div class=\"collapse show\" id=\"collapseTestament\">\n          <div class=\"card card-body\">\n            <textarea readonly class=\"form-control\" rows=\"3\">{{prid.testament.informationen}}</textarea>\n          </div>\n          <hr class=\"my-4\">\n        </div>\n\n        <!--Notar-->\n        <div *ngIf=\"prid.testament.testamentVorhanden\">\n          <p><b>Name:</b> {{prid.testament.notar.name}}</p>\n          <p><b>Kontaktart:</b> {{prid.testament.notar.kontaktart}}</p>\n          <p><b>Email:</b> {{prid.testament.notar.kontaktdaten.email}}</p>\n          <p><b>Handy:</b> {{prid.testament.notar.handynummer}}</p>\n          <p><b>Telefon:</b> {{prid.testament.notar.telefonnummer}}</p>\n        </div>\n      </div>\n    </div>\n\n  </div>\n</div>\n");
 
 /***/ }),
 
@@ -382,7 +382,7 @@ AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIn0= */");
+/* harmony default export */ __webpack_exports__["default"] = ("\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIn0= */");
 
 /***/ }),
 
@@ -509,7 +509,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("body {\n  height: 100%;\n}\n\nbody {\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-align: center;\n          align-items: center;\n  padding-top: 40px;\n  padding-bottom: 40px;\n  background-color: #f5f5f5;\n}\n\n.form-signin {\n  width: 100%;\n  max-width: 330px;\n  padding: 15px;\n  margin: auto;\n}\n\n.form-signin .checkbox {\n  font-weight: 400;\n}\n\n.form-signin .form-control {\n  position: relative;\n  box-sizing: border-box;\n  height: auto;\n  padding: 10px;\n  font-size: 16px;\n}\n\n.form-signin .form-control:focus {\n  z-index: 2;\n}\n\n.form-signin input[type=\"email\"] {\n  margin-bottom: -1px;\n  border-bottom-right-radius: 0;\n  border-bottom-left-radius: 0;\n}\n\n.form-signin input[type=\"password\"] {\n  margin-bottom: 10px;\n  border-top-left-radius: 0;\n  border-top-right-radius: 0;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9sb2dpbi9sb2dpbi5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsWUFBWTtBQUNkOztBQUVBO0VBRUUsb0JBQWE7RUFBYixhQUFhO0VBRWIseUJBQW1CO1VBQW5CLG1CQUFtQjtFQUNuQixpQkFBaUI7RUFDakIsb0JBQW9CO0VBQ3BCLHlCQUF5QjtBQUMzQjs7QUFFQTtFQUNFLFdBQVc7RUFDWCxnQkFBZ0I7RUFDaEIsYUFBYTtFQUNiLFlBQVk7QUFDZDs7QUFDQTtFQUNFLGdCQUFnQjtBQUNsQjs7QUFDQTtFQUNFLGtCQUFrQjtFQUNsQixzQkFBc0I7RUFDdEIsWUFBWTtFQUNaLGFBQWE7RUFDYixlQUFlO0FBQ2pCOztBQUNBO0VBQ0UsVUFBVTtBQUNaOztBQUNBO0VBQ0UsbUJBQW1CO0VBQ25CLDZCQUE2QjtFQUM3Qiw0QkFBNEI7QUFDOUI7O0FBQ0E7RUFDRSxtQkFBbUI7RUFDbkIseUJBQXlCO0VBQ3pCLDBCQUEwQjtBQUM1QiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvbG9naW4vbG9naW4uY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbImJvZHkge1xuICBoZWlnaHQ6IDEwMCU7XG59XG5cbmJvZHkge1xuICBkaXNwbGF5OiAtbXMtZmxleGJveDtcbiAgZGlzcGxheTogZmxleDtcbiAgLW1zLWZsZXgtYWxpZ246IGNlbnRlcjtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgcGFkZGluZy10b3A6IDQwcHg7XG4gIHBhZGRpbmctYm90dG9tOiA0MHB4O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjVmNWY1O1xufVxuXG4uZm9ybS1zaWduaW4ge1xuICB3aWR0aDogMTAwJTtcbiAgbWF4LXdpZHRoOiAzMzBweDtcbiAgcGFkZGluZzogMTVweDtcbiAgbWFyZ2luOiBhdXRvO1xufVxuLmZvcm0tc2lnbmluIC5jaGVja2JveCB7XG4gIGZvbnQtd2VpZ2h0OiA0MDA7XG59XG4uZm9ybS1zaWduaW4gLmZvcm0tY29udHJvbCB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgaGVpZ2h0OiBhdXRvO1xuICBwYWRkaW5nOiAxMHB4O1xuICBmb250LXNpemU6IDE2cHg7XG59XG4uZm9ybS1zaWduaW4gLmZvcm0tY29udHJvbDpmb2N1cyB7XG4gIHotaW5kZXg6IDI7XG59XG4uZm9ybS1zaWduaW4gaW5wdXRbdHlwZT1cImVtYWlsXCJdIHtcbiAgbWFyZ2luLWJvdHRvbTogLTFweDtcbiAgYm9yZGVyLWJvdHRvbS1yaWdodC1yYWRpdXM6IDA7XG4gIGJvcmRlci1ib3R0b20tbGVmdC1yYWRpdXM6IDA7XG59XG4uZm9ybS1zaWduaW4gaW5wdXRbdHlwZT1cInBhc3N3b3JkXCJdIHtcbiAgbWFyZ2luLWJvdHRvbTogMTBweDtcbiAgYm9yZGVyLXRvcC1sZWZ0LXJhZGl1czogMDtcbiAgYm9yZGVyLXRvcC1yaWdodC1yYWRpdXM6IDA7XG59XG4iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = ("body {\n  height: 100%;\n}\n\nbody {\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-align: center;\n          align-items: center;\n  padding-top: 40px;\n  padding-bottom: 40px;\n}\n\n@media (max-width: 500px) {\n  .form-signin {\n    width: 100%;\n    max-width: 330px;\n    padding: 15px;\n    margin: auto;\n  }\n}\n\n@media (min-width: 501px) {\n  .form-signin {\n    position: absolute;\n    width: 500px;\n    height: 500px;\n    top: 0;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    margin: auto;\n  }\n}\n\n.form-signin .checkbox {\n  font-weight: 400;\n}\n\n.form-signin .form-control {\n  position: relative;\n  box-sizing: border-box;\n  height: auto;\n  padding: 10px;\n  font-size: 16px;\n}\n\n.form-signin .form-control:focus {\n  z-index: 2;\n}\n\n.form-signin input[type=\"email\"] {\n  margin-bottom: -1px;\n  border-bottom-right-radius: 0;\n  border-bottom-left-radius: 0;\n}\n\n.form-signin input[type=\"password\"] {\n  margin-bottom: 10px;\n  border-top-left-radius: 0;\n  border-top-right-radius: 0;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9sb2dpbi9sb2dpbi5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsWUFBWTtBQUNkOztBQUVBO0VBRUUsb0JBQWE7RUFBYixhQUFhO0VBRWIseUJBQW1CO1VBQW5CLG1CQUFtQjtFQUNuQixpQkFBaUI7RUFDakIsb0JBQW9CO0FBQ3RCOztBQUVBO0VBQ0U7SUFDRSxXQUFXO0lBQ1gsZ0JBQWdCO0lBQ2hCLGFBQWE7SUFDYixZQUFZO0VBQ2Q7QUFDRjs7QUFFQTtFQUNFO0lBQ0Usa0JBQWtCO0lBQ2xCLFlBQVk7SUFDWixhQUFhO0lBQ2IsTUFBTTtJQUNOLFNBQVM7SUFDVCxPQUFPO0lBQ1AsUUFBUTtJQUNSLFlBQVk7RUFDZDtBQUNGOztBQUVBO0VBQ0UsZ0JBQWdCO0FBQ2xCOztBQUNBO0VBQ0Usa0JBQWtCO0VBQ2xCLHNCQUFzQjtFQUN0QixZQUFZO0VBQ1osYUFBYTtFQUNiLGVBQWU7QUFDakI7O0FBQ0E7RUFDRSxVQUFVO0FBQ1o7O0FBQ0E7RUFDRSxtQkFBbUI7RUFDbkIsNkJBQTZCO0VBQzdCLDRCQUE0QjtBQUM5Qjs7QUFDQTtFQUNFLG1CQUFtQjtFQUNuQix5QkFBeUI7RUFDekIsMEJBQTBCO0FBQzVCIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9sb2dpbi9sb2dpbi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiYm9keSB7XG4gIGhlaWdodDogMTAwJTtcbn1cblxuYm9keSB7XG4gIGRpc3BsYXk6IC1tcy1mbGV4Ym94O1xuICBkaXNwbGF5OiBmbGV4O1xuICAtbXMtZmxleC1hbGlnbjogY2VudGVyO1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBwYWRkaW5nLXRvcDogNDBweDtcbiAgcGFkZGluZy1ib3R0b206IDQwcHg7XG59XG5cbkBtZWRpYSAobWF4LXdpZHRoOiA1MDBweCkge1xuICAuZm9ybS1zaWduaW4ge1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIG1heC13aWR0aDogMzMwcHg7XG4gICAgcGFkZGluZzogMTVweDtcbiAgICBtYXJnaW46IGF1dG87XG4gIH1cbn1cblxuQG1lZGlhIChtaW4td2lkdGg6IDUwMXB4KSB7XG4gIC5mb3JtLXNpZ25pbiB7XG4gICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgIHdpZHRoOiA1MDBweDtcbiAgICBoZWlnaHQ6IDUwMHB4O1xuICAgIHRvcDogMDtcbiAgICBib3R0b206IDA7XG4gICAgbGVmdDogMDtcbiAgICByaWdodDogMDtcbiAgICBtYXJnaW46IGF1dG87XG4gIH1cbn1cblxuLmZvcm0tc2lnbmluIC5jaGVja2JveCB7XG4gIGZvbnQtd2VpZ2h0OiA0MDA7XG59XG4uZm9ybS1zaWduaW4gLmZvcm0tY29udHJvbCB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgaGVpZ2h0OiBhdXRvO1xuICBwYWRkaW5nOiAxMHB4O1xuICBmb250LXNpemU6IDE2cHg7XG59XG4uZm9ybS1zaWduaW4gLmZvcm0tY29udHJvbDpmb2N1cyB7XG4gIHotaW5kZXg6IDI7XG59XG4uZm9ybS1zaWduaW4gaW5wdXRbdHlwZT1cImVtYWlsXCJdIHtcbiAgbWFyZ2luLWJvdHRvbTogLTFweDtcbiAgYm9yZGVyLWJvdHRvbS1yaWdodC1yYWRpdXM6IDA7XG4gIGJvcmRlci1ib3R0b20tbGVmdC1yYWRpdXM6IDA7XG59XG4uZm9ybS1zaWduaW4gaW5wdXRbdHlwZT1cInBhc3N3b3JkXCJdIHtcbiAgbWFyZ2luLWJvdHRvbTogMTBweDtcbiAgYm9yZGVyLXRvcC1sZWZ0LXJhZGl1czogMDtcbiAgYm9yZGVyLXRvcC1yaWdodC1yYWRpdXM6IDA7XG59XG4iXX0= */");
 
 /***/ }),
 
@@ -534,14 +534,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let LoginComponent = class LoginComponent {
-    constructor(router, loginService, formBuilder) {
+    constructor(router, loginService, formBuilder, elementRef) {
         this.router = router;
         this.loginService = loginService;
         this.formBuilder = formBuilder;
+        this.elementRef = elementRef;
         this.loginForm = this.formBuilder.group({
             SAID: ''
         });
         this.validSAID = true;
+    }
+    ngAfterViewInit() {
+        this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = '#F0F2F1';
     }
     onSubmit(loginData) {
         this.loginService.getSAID(loginData.SAID)
@@ -557,7 +561,8 @@ let LoginComponent = class LoginComponent {
 LoginComponent.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] },
     { type: _login_service__WEBPACK_IMPORTED_MODULE_3__["LoginService"] },
-    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] }
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"] }
 ];
 LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -592,7 +597,7 @@ let LoginService = class LoginService {
         this.http = http;
     }
     getSAID(id) {
-        return this.http.get('http://mso-backend.herokuapp.com/storage/' + id);
+        return this.http.get('/storage/' + id);
     }
 };
 LoginService.ctorParameters = () => [
@@ -617,7 +622,7 @@ LoginService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvbWVkLWluZm9zL21lZC1pbmZvcy5jb21wb25lbnQuY3NzIn0= */");
+/* harmony default export */ __webpack_exports__["default"] = (".lead {\n  color: #8EB9BF;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9tZWQtaW5mb3MvbWVkLWluZm9zLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxjQUFjO0FBQ2hCIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9tZWQtaW5mb3MvbWVkLWluZm9zLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubGVhZCB7XG4gIGNvbG9yOiAjOEVCOUJGO1xufVxuIl19 */");
 
 /***/ }),
 
@@ -640,10 +645,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let MedInfosComponent = class MedInfosComponent {
-    constructor(route, router, saidService) {
+    constructor(route, router, saidService, elementRef) {
         this.route = route;
         this.router = router;
         this.saidService = saidService;
+        this.elementRef = elementRef;
+    }
+    ngAfterViewInit() {
+        this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = '#F0F2F1';
     }
     ngOnInit() {
         this.route.paramMap.subscribe(params => {
@@ -661,7 +670,8 @@ let MedInfosComponent = class MedInfosComponent {
 MedInfosComponent.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
-    { type: _said_said_service__WEBPACK_IMPORTED_MODULE_3__["SaidService"] }
+    { type: _said_said_service__WEBPACK_IMPORTED_MODULE_3__["SaidService"] },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"] }
 ];
 MedInfosComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -738,7 +748,7 @@ NavigationComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcGVyc29lbmxpY2hlLWluZm9zL3BlcnNvZW5saWNoZS1pbmZvcy5jb21wb25lbnQuY3NzIn0= */");
+/* harmony default export */ __webpack_exports__["default"] = (".lead {\n  color: #F2C36B;\n}\n\nh4 {\n  color: #F2C36B;\n}\n\n.kontaktFarbe {\n  color: #F2C36B;\n}\n\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9wZXJzb2VubGljaGUtaW5mb3MvcGVyc29lbmxpY2hlLWluZm9zLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxjQUFjO0FBQ2hCOztBQUVBO0VBQ0UsY0FBYztBQUNoQjs7QUFFQTtFQUNFLGNBQWM7QUFDaEIiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL3BlcnNvZW5saWNoZS1pbmZvcy9wZXJzb2VubGljaGUtaW5mb3MuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5sZWFkIHtcbiAgY29sb3I6ICNGMkMzNkI7XG59XG5cbmg0IHtcbiAgY29sb3I6ICNGMkMzNkI7XG59XG5cbi5rb250YWt0RmFyYmUge1xuICBjb2xvcjogI0YyQzM2Qjtcbn1cblxuIl19 */");
 
 /***/ }),
 
@@ -761,10 +771,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let PersoenlicheInfosComponent = class PersoenlicheInfosComponent {
-    constructor(route, router, saidService) {
+    constructor(route, router, saidService, elementRef) {
         this.route = route;
         this.router = router;
         this.saidService = saidService;
+        this.elementRef = elementRef;
+    }
+    ngAfterViewInit() {
+        this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = '#F0F2F1';
     }
     ngOnInit() {
         this.route.paramMap.subscribe(params => {
@@ -782,7 +796,8 @@ let PersoenlicheInfosComponent = class PersoenlicheInfosComponent {
 PersoenlicheInfosComponent.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
-    { type: _said_said_service__WEBPACK_IMPORTED_MODULE_3__["SaidService"] }
+    { type: _said_said_service__WEBPACK_IMPORTED_MODULE_3__["SaidService"] },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"] }
 ];
 PersoenlicheInfosComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -805,7 +820,7 @@ PersoenlicheInfosComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcHJpdmF0ZS1pbmZvcy9wcml2YXRlLWluZm9zLmNvbXBvbmVudC5jc3MifQ== */");
+/* harmony default export */ __webpack_exports__["default"] = (".lead {\n  color: #F56067;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9wcml2YXRlLWluZm9zL3ByaXZhdGUtaW5mb3MuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGNBQWM7QUFDaEIiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL3ByaXZhdGUtaW5mb3MvcHJpdmF0ZS1pbmZvcy5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmxlYWQge1xuICBjb2xvcjogI0Y1NjA2Nztcbn1cbiJdfQ== */");
 
 /***/ }),
 
@@ -828,10 +843,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let PrivateInfosComponent = class PrivateInfosComponent {
-    constructor(route, router, saidService) {
+    constructor(route, router, saidService, elementRef) {
         this.route = route;
         this.router = router;
         this.saidService = saidService;
+        this.elementRef = elementRef;
+    }
+    ngAfterViewInit() {
+        this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = '#F0F2F1';
     }
     ngOnInit() {
         this.route.paramMap.subscribe(params => {
@@ -849,7 +868,8 @@ let PrivateInfosComponent = class PrivateInfosComponent {
 PrivateInfosComponent.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
-    { type: _said_said_service__WEBPACK_IMPORTED_MODULE_3__["SaidService"] }
+    { type: _said_said_service__WEBPACK_IMPORTED_MODULE_3__["SaidService"] },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"] }
 ];
 PrivateInfosComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -872,7 +892,7 @@ PrivateInfosComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvc2FpZC9zYWlkLmNvbXBvbmVudC5jc3MifQ== */");
+/* harmony default export */ __webpack_exports__["default"] = ("#pers {\n  color: #F2C36B;\n}\n\n#priv {\n  color: #F56067;\n}\n\n#med {\n  color: #8EB9BF;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9zYWlkL3NhaWQuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGNBQWM7QUFDaEI7O0FBRUE7RUFDRSxjQUFjO0FBQ2hCOztBQUVBO0VBQ0UsY0FBYztBQUNoQiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvc2FpZC9zYWlkLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjcGVycyB7XG4gIGNvbG9yOiAjRjJDMzZCO1xufVxuXG4jcHJpdiB7XG4gIGNvbG9yOiAjRjU2MDY3O1xufVxuXG4jbWVkIHtcbiAgY29sb3I6ICM4RUI5QkY7XG59XG4iXX0= */");
 
 /***/ }),
 
@@ -904,15 +924,76 @@ let SAIDComponent = class SAIDComponent {
         this.route.paramMap.subscribe(params => {
             this.said = params.get('id');
         });
-        this.saidService.getData(this.said)
-            .subscribe((data) => {
-            this.data = data;
-            this.mzd = this.data.medizinischeInformationen;
-            this.prid = this.data.privateDaten;
-            this.perd = this.data.persoenlicheDaten;
-        }, error => {
-            console.log(error);
-        });
+        this.data = {
+            "medizinischeInformationen": {
+                "allergien": ['Test'],
+                "blutgruppe": null,
+                "erkankungUndBefunde": [],
+                "informationen": null,
+                "medikamente": [],
+                "organspender": {
+                    "information": null,
+                    "istOrganspender": false
+                },
+                "patientenverfuegung": {
+                    "hatPatientenverfuegung": false,
+                    "information": null
+                }
+            },
+            "persoenlicheDaten": {
+                "anschrift": {
+                    "adresszusatz": null,
+                    "hausnummer": null,
+                    "ort": null,
+                    "plz": null,
+                    "strasse": null
+                },
+                "beruf": null,
+                "geburtsdatum": "2019-12-24",
+                "gewicht": null,
+                "groeße": null,
+                "kontaktdaten": [
+                    {
+                        "email": null,
+                        "handynummer": null,
+                        "telefonnummer": null
+                    }
+                ],
+                "name": "Nachname",
+                "vorname": "Vorname"
+            },
+            "privateDaten": {
+                "notfallkontakte": [],
+                "relevanteDaten": [],
+                "testament": {
+                    "informationen": null,
+                    "notar": {
+                        "kontaktart": null,
+                        "kontaktdaten": {
+                            "email": null,
+                            "handynummer": null,
+                            "telefonnummer": null
+                        },
+                        "name": null
+                    },
+                    "testamentVorhanden": false
+                }
+            },
+            "id": 0
+        };
+        this.mzd = this.data.medizinischeInformationen;
+        this.prid = this.data.privateDaten;
+        this.perd = this.data.persoenlicheDaten;
+        // this.saidService.getData(this.said)
+        //   .subscribe((data: any) => {
+        //       this.data = data;
+        //       this.mzd = this.data.medizinischeInformationen;
+        //       this.prid = this.data.privateDaten;
+        //       this.perd = this.data.persoenlicheDaten;
+        //     },
+        //     error => {
+        //       console.log(error);
+        //     });
     }
 };
 SAIDComponent.ctorParameters = () => [
@@ -953,7 +1034,7 @@ let SaidService = class SaidService {
         this.http = http;
     }
     getData(id) {
-        return this.http.get('http://mso-backend.herokuapp.com/storage/' + id);
+        return this.http.get('/storage/' + id);
     }
 };
 SaidService.ctorParameters = () => [
