@@ -924,76 +924,15 @@ let SAIDComponent = class SAIDComponent {
         this.route.paramMap.subscribe(params => {
             this.said = params.get('id');
         });
-        this.data = {
-            "medizinischeInformationen": {
-                "allergien": ['Test'],
-                "blutgruppe": null,
-                "erkankungUndBefunde": [],
-                "informationen": null,
-                "medikamente": [],
-                "organspender": {
-                    "information": null,
-                    "istOrganspender": false
-                },
-                "patientenverfuegung": {
-                    "hatPatientenverfuegung": false,
-                    "information": null
-                }
-            },
-            "persoenlicheDaten": {
-                "anschrift": {
-                    "adresszusatz": null,
-                    "hausnummer": null,
-                    "ort": null,
-                    "plz": null,
-                    "strasse": null
-                },
-                "beruf": null,
-                "geburtsdatum": "2019-12-24",
-                "gewicht": null,
-                "groeße": null,
-                "kontaktdaten": [
-                    {
-                        "email": null,
-                        "handynummer": null,
-                        "telefonnummer": null
-                    }
-                ],
-                "name": "Nachname",
-                "vorname": "Vorname"
-            },
-            "privateDaten": {
-                "notfallkontakte": [],
-                "relevanteDaten": [],
-                "testament": {
-                    "informationen": null,
-                    "notar": {
-                        "kontaktart": null,
-                        "kontaktdaten": {
-                            "email": null,
-                            "handynummer": null,
-                            "telefonnummer": null
-                        },
-                        "name": null
-                    },
-                    "testamentVorhanden": false
-                }
-            },
-            "id": 0
-        };
-        this.mzd = this.data.medizinischeInformationen;
-        this.prid = this.data.privateDaten;
-        this.perd = this.data.persoenlicheDaten;
-        // this.saidService.getData(this.said)
-        //   .subscribe((data: any) => {
-        //       this.data = data;
-        //       this.mzd = this.data.medizinischeInformationen;
-        //       this.prid = this.data.privateDaten;
-        //       this.perd = this.data.persoenlicheDaten;
-        //     },
-        //     error => {
-        //       console.log(error);
-        //     });
+        this.saidService.getData(this.said)
+            .subscribe((data) => {
+            this.data = data;
+            this.mzd = this.data.medizinischeInformationen;
+            this.prid = this.data.privateDaten;
+            this.perd = this.data.persoenlicheDaten;
+        }, error => {
+            console.log(error);
+        });
     }
 };
 SAIDComponent.ctorParameters = () => [
