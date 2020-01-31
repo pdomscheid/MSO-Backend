@@ -1,0 +1,57 @@
+<app-navigation></app-navigation>
+<div *ngIf="prid">
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <div class="row">
+        <h3 class="display-4">Private Informationen</h3>
+      </div>
+      <!--Notfallkontakte-->
+      <p class="lead" data-toggle="collapse" href="#collapseNotfallKontakte" aria-expanded="false"
+         aria-controls="collapseExample">Notfallkontakte</p>
+      <hr class="my-4">
+      <div class="collapse show" id="collapseNotfallKontakte">
+        <div class="card card-body">
+          <ul class="list-group">
+            <li *ngFor="let notfall of prid.notfallkontakte" class="list-group-item">{{notfall}}</li>
+          </ul>
+        </div>
+        <hr class="my-4">
+      </div>
+
+      <!--Relevtante Daten-->
+      <p class="lead" data-toggle="collapse" href="#collapseRelevanteDaten" aria-expanded="false"
+         aria-controls="collapseExample">Relevante Daten</p>
+      <hr class="my-4">
+      <div class="collapse show" id="collapseRelevanteDaten">
+        <div class="card card-body">
+          <ul class="list-group">
+            <li *ngFor="let data of prid.relevanteDaten" class="list-group-item">{{data}}</li>
+          </ul>
+        </div>
+        <hr class="my-4">
+      </div>
+
+      <!--Testament -->
+      <div *ngIf="prid.testament.testamentVorhanden">
+        <p class="lead" data-toggle="collapse" href="#collapseTestament" aria-expanded="false"
+           aria-controls="collapseExample">Testament</p>
+        <hr class="my-4">
+        <div class="collapse show" id="collapseTestament">
+          <div class="card card-body">
+            <textarea readonly class="form-control" rows="3">{{prid.testament.informationen}}</textarea>
+          </div>
+          <hr class="my-4">
+        </div>
+
+        <!--Notar-->
+        <div *ngIf="prid.testament.testamentVorhanden">
+          <p><b>Name:</b> {{prid.testament.notar.name}}</p>
+          <p><b>Kontaktart:</b> {{prid.testament.notar.kontaktart}}</p>
+          <p><b>Email:</b> {{prid.testament.notar.kontaktdaten.email}}</p>
+          <p><b>Handy:</b> {{prid.testament.notar.handynummer}}</p>
+          <p><b>Telefon:</b> {{prid.testament.notar.telefonnummer}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

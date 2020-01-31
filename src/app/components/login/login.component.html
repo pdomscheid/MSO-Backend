@@ -1,0 +1,12 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)" class="form-signin" id="form">
+  <h1 class="h3 mb-3 font-weight-normal">Staying Alive</h1>
+  <span>Bitte geben Sie die SA-ID ein:</span>
+  <div class="form-group">
+    <input type="text" class="form-control" id="said" placeholder="SA-ID" formControlName="SAID">
+  </div>
+  <div *ngIf="!validSAID" class="alert alert-danger" role="alert">
+    Ungültige SA-ID.
+  </div>
+  <button type="submit" class="btn btn-lg btn-primary btn-block" id="submit">Abrufen</button>
+  <p class="mt-5 mb-3 text-muted">MSO @ HS-MA WS 2019</p>
+</form>

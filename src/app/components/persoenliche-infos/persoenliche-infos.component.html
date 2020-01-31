@@ -1,0 +1,87 @@
+<app-navigation></app-navigation>
+
+<div *ngIf="perd">
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <div class="row">
+        <h3 class="display-4">Persönliche Informationen</h3>
+      </div>
+      <!--Vor- und Nachname-->
+      <div class="row">
+        <div class="col">
+          <h4>Vorname</h4>
+          <input readonly type="text" class="form-control" placeholder="{{perd.vorname}}">
+          <hr class="my-4">
+        </div>
+        <div class="col">
+          <h4>Nachname</h4>
+          <input readonly type="text" class="form-control" placeholder="{{perd.name}}">
+          <hr class="my-4">
+        </div>
+      </div>
+
+      <!--Geburtsdatum- und Beruf-->
+      <div class="row">
+        <div class="col">
+          <h4>Geburtsdatum</h4>
+          <input readonly type="text" class="form-control" placeholder="{{perd.geburtsdatum}}">
+          <hr class="my-4">
+        </div>
+        <div class="col">
+          <h4>Beruf</h4>
+          <input readonly type="text" class="form-control" placeholder="{{perd.beruf}}">
+          <hr class="my-4">
+        </div>
+      </div>
+
+      <!--Gewicht- und Groesse-->
+      <div class="row">
+        <div class="col">
+          <h4>Gewicht</h4>
+          <input readonly type="text" class="form-control" placeholder="{{perd.gewicht}}">
+          <hr class="my-4">
+        </div>
+        <div class="col">
+          <h4>Größe</h4>
+          <input readonly type="text" class="form-control" placeholder="{{perd.groesse}}">
+          <hr class="my-4">
+        </div>
+      </div>
+
+      <!--Adresse-->
+      <div class="row">
+        <div class="col">
+          <h4>Adresse</h4>
+          <input readonly type="text" class="form-control" placeholder="{{perd.anschrift.strasse}}
+      {{perd.anschrift.hausnummer}} {{perd.anschrift.adresszusatz}},{{perd.anschrift.plz}} {{perd.anschrift.ort}}">
+          <hr class="my-4">
+        </div>
+      </div>
+
+      <!--Kontaktdaten-->
+      <div>
+        <h4 data-toggle="collapse" href="#collapseKontakt" aria-expanded="false"
+            aria-controls="collapseExample">Kontaktdaten</h4>
+        <hr class="my-4">
+        <div class="collapse show" id="collapseKontakt">
+          <div class="card card-body">
+            <ul class="list-group">
+              <li *ngFor="let kontakt of perd.kontaktdaten" class="list-group-item">
+                <div class="container">
+                  <div class="row">
+                    <div class="col">
+                      <p class="kontaktFarbe"><b>Email:</b> {{kontakt.email}}</p>
+                      <p class="kontaktFarbe"><b>Handy:</b> {{kontakt.handynummer}}</p>
+                      <p class="kontaktFarbe"><b>Telefon:</b> {{kontakt.telefonnummer}}</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <hr class="my-4">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

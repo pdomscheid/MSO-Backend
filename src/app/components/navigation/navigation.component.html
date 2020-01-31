@@ -1,0 +1,77 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="">Staying Alive</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <div *ngIf="router.url === '/said/' + said">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a [routerLink]="['/said', said]" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/medInfos', said]" class="nav-link">Medizinische Informationen</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/privateInfos', said]" class="nav-link">Private Informationen</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/persoenlicheInfos', said]" class="nav-link">Persönliche Informationen</a>
+        </li>
+      </ul>
+    </div>
+
+    <div *ngIf="router.url === '/medInfos/' + said">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a [routerLink]="['/said', said]" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a [routerLink]="['/medInfos', said]" class="nav-link">Medizinische Informationen</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/privateInfos', said]" class="nav-link">Private Informationen</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/persoenlicheInfos', said]" class="nav-link">Persönliche Informationen</a>
+        </li>
+      </ul>
+    </div>
+
+    <div *ngIf="router.url === '/privateInfos/' + said">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a [routerLink]="['/said', said]" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/medInfos', said]" class="nav-link">Medizinische Informationen</a>
+        </li>
+        <li class="nav-item active">
+          <a [routerLink]="['/privateInfos', said]" class="nav-link">Private Informationen</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/persoenlicheInfos', said]" class="nav-link">Persönliche Informationen</a>
+        </li>
+      </ul>
+    </div>
+
+    <div *ngIf="router.url === '/persoenlicheInfos/' + said">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a [routerLink]="['/said', said]" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/medInfos', said]" class="nav-link">Medizinische Informationen</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/privateInfos', said]" class="nav-link">Private Informationen</a>
+        </li>
+        <li class="nav-item active">
+          <a [routerLink]="['/persoenlicheInfos', said]" class="nav-link">Persönliche Informationen</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

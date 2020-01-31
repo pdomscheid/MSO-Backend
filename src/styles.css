@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+.jumbotron {
+  background-color: #F0F2F1;
+}
+
+.list-group-item {
+  background-color: #F0F2F1;
+}
+
+.card {
+  background-color: #F0F2F1;
+}
+
+.col {
+  padding: 0px;
+}
+
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.lead {
+  font-size: 24px;
+}
+
+body {
+  background-color: #F0F2F1;
+}

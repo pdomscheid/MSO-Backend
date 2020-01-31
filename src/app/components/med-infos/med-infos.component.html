@@ -1,0 +1,99 @@
+<app-navigation></app-navigation>
+
+<div *ngIf="mzd">
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <div class="row">
+        <h3 class="display-4">Medizinische Informationen</h3>
+      </div>
+      <!-- Allergien-->
+      <p class="lead" data-toggle="collapse" href="#collapseAllergien" aria-expanded="false"
+         aria-controls="collapseExample">Allergien</p>
+      <hr class="my-4">
+      <div class="collapse show" id="collapseAllergien">
+        <div class="card card-body">
+          <ul class="list-group">
+            <li *ngFor="let allergen of mzd.allergien" class="list-group-item">{{allergen}}</li>
+          </ul>
+        </div>
+        <hr class="my-4">
+      </div>
+
+      <!--Erkrankungen-->
+      <p class="lead" data-toggle="collapse" href="#collapseErkrankungen" aria-expanded="false"
+         aria-controls="collapseExample">Erkrankungen und Befunde:</p>
+      <hr class="my-4">
+      <div class="collapse show" id="collapseErkrankungen">
+        <div class="card card-body">
+          <ul class="list-group">
+            <li *ngFor="let allergen of mzd.erkankungUndBefunde" class="list-group-item">{{allergen}}</li>
+          </ul>
+        </div>
+        <hr class="my-4">
+      </div>
+
+      <!--Medikamente-->
+      <p class="lead" data-toggle="collapse" href="#collapseMedikamente" aria-expanded="false"
+         aria-controls="collapseExample">Medikamente</p>
+      <hr class="my-4">
+      <div class="collapse show" id="collapseMedikamente">
+        <div class="card card-body">
+          <ul class="list-group">
+            <li *ngFor="let allergen of mzd.medikamente" class="list-group-item">{{allergen}}</li>
+          </ul>
+        </div>
+        <hr class="my-4">
+      </div>
+
+      <!--Blutgruppe-->
+      <div>
+        <p class="lead">Blutgruppe: {{mzd.blutgruppe}}</p>
+        <hr class="my-4">
+      </div>
+
+      <div class="row">
+        <!--Organspender-->
+        <div class="col">
+          <p class="lead" data-toggle="collapse" href="#collapseOrgaPatient" aria-expanded="false"
+             aria-controls="collapseExample">Organspender:
+            <ng-template
+              *ngIf="mzd.organspender.istOrganspender;then organspender; else notOrganspender">
+            </ng-template>
+            <ng-template #organspender>Ja</ng-template>
+            <ng-template #notOrganspender>Nein</ng-template>
+          </p>
+        </div>
+
+        <!--Patientenverfügung-->
+        <div class="col">
+          <p class="lead" data-toggle="collapse" href="#collapseOrgaPatient" aria-expanded="false"
+             aria-controls="collapseExample">Patientenverfügung:
+            <ng-template
+              *ngIf="mzd.patientenverfuegung.hatPatientenverfuegung;then patient; else notPatient">
+            </ng-template>
+            <ng-template #patient>Ja</ng-template>
+            <ng-template #notPatient>Nein</ng-template>
+          </p>
+        </div>
+      </div>
+
+      <!--Organspender und Patientenverfügungs - Informationen-->
+      <div class="collapse show" id="collapseOrgaPatient">
+        <div class="row">
+          <div class="col">
+            <div class="card card-body">
+              <p>{{mzd.organspender.information}}</p>
+            </div>
+            <hr class="my-4">
+          </div>
+          <div class="col">
+            <div class="card card-body">
+              <p>{{mzd.patientenverfuegung.information}}</p>
+            </div>
+            <hr class="my-4">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
