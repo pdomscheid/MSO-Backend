@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_medizinische_daten">
+
+    <fragment
+        android:id="@+id/navigation_persoenliche_daten"
+        android:name="de.hsma.stayingalive.ui.persoenlichedaten.PersoenlicheDatenFragment"
+        android:label="@string/title_persoenliche_daten"
+        tools:layout="@layout/fragment_persoenliche_daten">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_medizinische_daten"
+        android:name="de.hsma.stayingalive.ui.medizinischedaten.MedzinischeDatenFragment"
+        android:label="@string/title_medizinische_daten"
+        tools:layout="@layout/fragment_medizinische_daten">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_notfallkontakte"
+        android:name="de.hsma.stayingalive.ui.notfallkontakt.NotfallkontakteFragment"
+        android:label="@string/title_notfallkontakte"
+        tools:layout="@layout/fragment_notfallkontakte">
+
+    </fragment>
+
+</navigation>

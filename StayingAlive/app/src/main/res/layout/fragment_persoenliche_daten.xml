@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/persoenliche_daten"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite">
+        <!--Gelb Orange-->
+
+
+        <EditText
+            android:id="@+id/editTextVorname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:hint="Vorname"
+            android:inputType="textPersonName"
+            android:backgroundTint="@color/colorOrange"
+            android:textColor="@color/colorBlack"
+            android:textColorHint="@color/colorGrey"
+            android:textColorLink="@color/colorOrange"
+            android:textCursorDrawable="@drawable/edit_text_personal"
+            app:layout_constraintStart_toStartOf="@+id/NotfallKontaktAnzeigename"
+            app:layout_constraintTop_toBottomOf="@+id/NotfallKontaktAnzeigename" />
+
+        <EditText
+            android:id="@+id/editTextNachname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:hint="Nachname"
+            android:textColor="@color/colorBlack"
+            android:backgroundTint="@color/colorOrange"
+            android:textColorHint="@color/colorGrey"
+            android:inputType="textPersonName"
+            android:textCursorDrawable="@drawable/edit_text_personal"
+            app:layout_constraintStart_toStartOf="@+id/editTextVorname"
+            app:layout_constraintTop_toBottomOf="@+id/editTextVorname" />
+
+        <TextView
+            android:id="@+id/NotfallKontaktAnzeigename"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Hallo! Wie heißt du?"
+            android:textColor="@color/colorBlack"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Wann hast du Geburtstag?"
+            android:textColor="@color/colorBlack"
+            app:layout_constraintStart_toStartOf="@+id/editTextNachname"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNachname" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="171dp"
+            android:layout_height="27dp"
+            android:layout_marginTop="16dp"
+            android:text="Wo wohnst du?"
+            android:textColor="@color/colorBlack"
+            app:layout_constraintStart_toStartOf="@+id/editTextGeburstag"
+            app:layout_constraintTop_toBottomOf="@+id/editTextGeburstag" />
+
+
+        <EditText
+            android:id="@+id/editTextGeburstag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:hint="01.01.1990"
+            android:textColor="@color/colorBlack"
+            android:backgroundTint="@color/colorOrange"
+            android:textColorHint="@color/colorGrey"
+            android:inputType="date"
+            android:textCursorDrawable="@drawable/edit_text_personal"
+            app:layout_constraintStart_toStartOf="@+id/textView3"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <EditText
+            android:id="@+id/editTextStrasse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:ems="10"
+            android:hint="Straße"
+            android:inputType="text"
+            android:textColor="@color/colorBlack"
+            android:backgroundTint="@color/colorOrange"
+            android:textColorHint="@color/colorGrey"
+            android:textCursorDrawable="@drawable/edit_text_personal"
+            app:layout_constraintStart_toStartOf="@+id/textView3"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+        <EditText
+            android:id="@+id/editTextOrt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:hint="Ort"
+            android:textColor="@color/colorBlack"
+            android:backgroundTint="@color/colorOrange"
+            android:textColorHint="@color/colorGrey"
+            android:inputType="text"
+            android:textCursorDrawable="@drawable/edit_text_personal"
+            app:layout_constraintStart_toEndOf="@+id/editTextPlz"
+            app:layout_constraintTop_toBottomOf="@+id/editTextHausnummer" />
+
+        <EditText
+            android:id="@+id/editTextHausnummer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="5dp"
+            android:width="50dp"
+            android:ems="10"
+            android:hint="Nr"
+            android:inputType="text"
+            android:textColor="@color/colorBlack"
+            android:backgroundTint="@color/colorOrange"
+            android:textColorHint="@color/colorGrey"
+            android:textCursorDrawable="@drawable/edit_text_personal"
+            app:layout_constraintStart_toEndOf="@+id/editTextStrasse"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+        <EditText
+            android:id="@+id/editTextPlz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:width="100dp"
+            android:ems="10"
+            android:hint="PLZ"
+            android:inputType="number"
+            android:textColor="@color/colorBlack"
+            android:backgroundTint="@color/colorOrange"
+            android:textColorHint="@color/colorGrey"
+            android:textColorLink="#F23178CE"
+            android:textCursorDrawable="@drawable/edit_text_personal"
+            app:layout_constraintStart_toStartOf="@+id/editTextStrasse"
+            app:layout_constraintTop_toBottomOf="@+id/editTextStrasse" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="Welchen Beruf übst du aus?"
+            android:textColor="@color/colorBlack"
+            android:backgroundTint="@color/colorBlack"
+            android:textColorHint="@color/colorGrey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextOrt" />
+
+        <EditText
+            android:id="@+id/editTextBeruf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:hint="Beruf"
+            android:textColor="@color/colorBlack"
+            android:backgroundTint="@color/colorOrange"
+            android:textColorHint="@color/colorGrey"
+            android:inputType="textPersonName"
+            android:textCursorDrawable="@drawable/edit_text_personal"
+            app:layout_constraintStart_toStartOf="@+id/textView12"
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+        <TextView
+            android:id="@+id/textViewGroesse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Wie groß bist du?"
+            android:textColor="@color/colorBlack"
+            app:layout_constraintStart_toStartOf="@+id/editTextBeruf"
+            app:layout_constraintTop_toBottomOf="@+id/editTextBeruf" />
+
+        <EditText
+            android:id="@+id/editTextGroesse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:hint="cm"
+            android:textColor="@color/colorBlack"
+            android:backgroundTint="@color/colorOrange"
+            android:textColorHint="@color/colorGrey"
+            android:inputType="number"
+            android:textCursorDrawable="@drawable/edit_text_personal"
+            app:layout_constraintStart_toStartOf="@+id/textViewGroesse"
+            app:layout_constraintTop_toBottomOf="@+id/textViewGroesse" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Dein Gewicht?"
+            android:backgroundTint="@color/colorBlack"
+            android:textColorHint="@color/colorGrey"
+            android:textColor="@color/colorBlack"
+            app:layout_constraintStart_toStartOf="@+id/editTextGroesse"
+            app:layout_constraintTop_toBottomOf="@+id/editTextGroesse" />
+
+        <EditText
+            android:id="@+id/editTextGewicht"
+            android:layout_width="209dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:hint="kg"
+            android:textColor="@color/colorBlack"
+            android:backgroundTint="@color/colorOrange"
+            android:textColorHint="@color/colorGrey"
+            android:inputType="number"
+            android:textCursorDrawable="@drawable/edit_text_personal"
+            app:layout_constraintStart_toStartOf="@+id/textView11"
+            app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
