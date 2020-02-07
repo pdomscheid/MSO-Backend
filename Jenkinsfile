@@ -8,5 +8,13 @@ pipeline {
                 }
             }
         }
+        stage('Deploy') {
+                    steps {
+                        nodejs(nodeJSInstallationName: 'recent node') {
+                            sh 'npm start'
+                        }
+                    }
+                }
+
     }
 }
