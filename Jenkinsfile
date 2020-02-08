@@ -11,7 +11,8 @@ pipeline {
         stage('Deploy') {
                     steps {
                         nodejs(nodeJSInstallationName: 'recent node') {
-                            sh 'node app.js'
+                            sh 'docker build -tag backend'
+                            sh 'docker run -p 3000:3000 backend'
                         }
                     }
                 }
