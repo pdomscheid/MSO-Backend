@@ -9,6 +9,8 @@ pipeline {
             }
         }
         stage('Deploy') {
+            def dockerHome = tool 'myDocker'
+            env.PATH = "${dockerHome}/bin:${env.PATH}"
                     steps {
                         nodejs(nodeJSInstallationName: 'recent node') {
                             sh 'docker build -tag backend'
